@@ -13,7 +13,7 @@
 		19EF9B5926A2E4A8007A0BBA /* TakeawayChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF9B5826A2E4A8007A0BBA /* TakeawayChallengeTests.swift */; };
 		19EF9B6426A2E4A9007A0BBA /* TakeawayChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF9B6326A2E4A9007A0BBA /* TakeawayChallengeUITests.swift */; };
 		19EF9B7326A2E776007A0BBA /* Helper in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B7226A2E776007A0BBA /* Helper */; };
-		19EF9B7526A2E776007A0BBA /* Restaurant in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B7426A2E776007A0BBA /* Restaurant */; };
+		19EF9B7726A2EA71007A0BBA /* RestaurantList in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B7626A2EA71007A0BBA /* RestaurantList */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19EF9B7326A2E776007A0BBA /* Helper in Frameworks */,
-				19EF9B7526A2E776007A0BBA /* Restaurant in Frameworks */,
+				19EF9B7726A2EA71007A0BBA /* RestaurantList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +149,7 @@
 			name = TakeawayChallenge;
 			packageProductDependencies = (
 				19EF9B7226A2E776007A0BBA /* Helper */,
-				19EF9B7426A2E776007A0BBA /* Restaurant */,
+				19EF9B7626A2EA71007A0BBA /* RestaurantList */,
 			);
 			productName = TakeawayChallenge;
 			productReference = 19EF9B3E26A2E4A8007A0BBA /* TakeawayChallenge.app */;
@@ -591,9 +591,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Helper;
 		};
-		19EF9B7426A2E776007A0BBA /* Restaurant */ = {
+		19EF9B7626A2EA71007A0BBA /* RestaurantList */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Restaurant;
+			productName = RestaurantList;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -10,19 +10,22 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Restaurant",
-            targets: ["Restaurant"]),
+            name: "RestaurantList",
+            targets: ["RestaurantList"]),
     ],
     dependencies: [
-        .package(path: "../Helper")
+        .package(path: "Helper")
     ],
     targets: [
         .target(
-            name: "Restaurant",
-            dependencies: []
+            name: "RestaurantList",
+            dependencies: [
+                "Helper"
+            ]
         ),
         .testTarget(
             name: "RestaurantTests",
-            dependencies: ["Restaurant"]),
+            dependencies: ["RestaurantList"]
+        ),
     ]
 )
