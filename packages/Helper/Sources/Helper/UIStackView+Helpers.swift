@@ -15,14 +15,14 @@ public func vStack(
     isLayoutMarginsRelativeArrangement: Bool = false
 ) -> (UIView...) -> UIStackView {
     { (views: UIView...) in
-        let stackView = UIStackView(arrangedSubviews: views)
-        stackView.axis = .vertical
-        stackView.spacing = space
-        stackView.alignment = alignment
-        stackView.distribution = distribution
-        stackView.isBaselineRelativeArrangement = isBaselineRelativeArrangement
-        stackView.isLayoutMarginsRelativeArrangement = isLayoutMarginsRelativeArrangement
-        return stackView
+        with(UIStackView(arrangedSubviews: views)) {
+            $0.axis = .vertical
+            $0.spacing = space
+            $0.alignment = alignment
+            $0.distribution = distribution
+            $0.isBaselineRelativeArrangement = isBaselineRelativeArrangement
+            $0.isLayoutMarginsRelativeArrangement = isLayoutMarginsRelativeArrangement
+        }
     }
 }
 
@@ -34,13 +34,13 @@ public func hStack(
     isLayoutMarginsRelativeArrangement: Bool = false
 ) -> (UIView...) -> UIStackView {
     { (views: UIView...) in
-        let stackView = UIStackView(arrangedSubviews: views)
-        stackView.axis = .horizontal
-        stackView.spacing = space
-        stackView.alignment = alignment
-        stackView.distribution = distribution
-        stackView.isBaselineRelativeArrangement = isBaselineRelativeArrangement
-        stackView.isLayoutMarginsRelativeArrangement = isLayoutMarginsRelativeArrangement
-        return stackView
+        with(UIStackView(arrangedSubviews: views)) {
+            $0.axis = .horizontal
+            $0.spacing = space
+            $0.alignment = alignment
+            $0.distribution = distribution
+            $0.isBaselineRelativeArrangement = isBaselineRelativeArrangement
+            $0.isLayoutMarginsRelativeArrangement = isLayoutMarginsRelativeArrangement
+        }
     }
 }
