@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:domains"
+      name = "domains">
+      <FileRef
+         location = "group:Restaurant">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:packages"
+      name = "packages">
+      <FileRef
+         location = "group:Helper">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:TakeawayChallenge.xcodeproj">
+   </FileRef>
+</Workspace>
