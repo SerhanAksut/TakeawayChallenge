@@ -13,6 +13,10 @@ let package = Package(
             name: "FileReader",
             targets: ["FileReader"]
         ),
+        .library(
+            name: "RestaurantReader",
+            targets: ["RestaurantReader"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift", from: "6.2.0")
@@ -20,13 +24,14 @@ let package = Package(
     targets: [
         .target(
             name: "FileReader",
+            dependencies: []
+        ),
+        .target(
+            name: "RestaurantReader",
             dependencies: [
+                "FileReader",
                 .product(name: "RxCocoa", package: "RxSwift")
             ]
-        ),
-        .testTarget(
-            name: "FileReaderTests",
-            dependencies: ["FileReader"]
         ),
     ]
 )

@@ -36,7 +36,6 @@ final class RestaurantListViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = viewSource.sortingOptionsBarButton
-        
         bindViewModelOutputs()
     }
 }

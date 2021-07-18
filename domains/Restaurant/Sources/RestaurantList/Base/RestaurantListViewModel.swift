@@ -12,10 +12,14 @@ import class RxHelper.ActivityIndicator
 
 import struct RxHelper.ErrorObject
 
+import struct RestaurantReader.RestaurantReader
+import struct RestaurantReader.Restaurant
+
 // MARK: - IO Models
 struct RestaurantListViewModelInput {
     var concurrentBackgroundQueue: SchedulerType
     var concurrentUserInitiatedQueue: SchedulerType
+    var restaurantReader: RestaurantReader = .live
     var viewDidLoad: Observable<Void> = .never()
     var sortingOptionsButtonTapped: Observable<Void> = .never()
 }
@@ -24,6 +28,7 @@ struct RestaurantListViewModelOutput {
     let navBarTitle: Driver<String>
     let isLoading: Driver<Bool>
     let error: Driver<ErrorObject>
+    let datasource: Driver<[Restaurant]>
     let showSortingOptions: Driver<[String]>
 }
 
@@ -39,6 +44,7 @@ func restaurantListViewModel(
         navBarTitle: getNavBarTitleOutput(inputs),
         isLoading: indicator.asDriver(),
         error: .never(),
+        datasource: .never(),
         showSortingOptions: getShowSortingOptionsOutput(inputs)
     )
 }
