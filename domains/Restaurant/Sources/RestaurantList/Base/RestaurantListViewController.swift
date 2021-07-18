@@ -35,7 +35,8 @@ final class RestaurantListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = Constants.navBarTitle
+        navigationItem.rightBarButtonItem = viewSource.sortingOptionsBarButton
+        
         bindViewModelOutputs()
     }
 }
@@ -46,22 +47,22 @@ private extension RestaurantListViewController {
         let outputs = viewModel(inputs)
         
         bag.insert(
+            outputs.navBarTitle.drive(navigationItem.rx.title),
             outputs.isLoading.drive(rx.showHideLoading),
-            outputs.error.drive(rx.displayError)
+            outputs.error.drive(rx.displayError),
+            outputs.showSortingOptions.drive(rx.showSortingOptions)
         )
     }
     
     var inputs: RestaurantListViewModelInput {
         let concurrentBackgroundQueue = ConcurrentDispatchQueueScheduler(qos: .background)
+        let concurrentUserInitiatedQueue = ConcurrentDispatchQueueScheduler(qos: .background)
         
         return RestaurantListViewModelInput(
             concurrentBackgroundQueue: concurrentBackgroundQueue,
-            viewDidLoad: Observable.just(())
+            concurrentUserInitiatedQueue: concurrentUserInitiatedQueue,
+            viewDidLoad: Observable.just(()),
+            sortingOptionsButtonTapped: viewSource.sortingOptionsBarButton.rx.tap.asObservable()
         )
     }
-}
-
-// MARK: - Constants
-private enum Constants {
-    static let navBarTitle = "Restaurants"
 }

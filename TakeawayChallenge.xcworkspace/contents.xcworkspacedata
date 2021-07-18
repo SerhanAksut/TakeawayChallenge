@@ -12,6 +12,9 @@
       location = "group:packages"
       name = "packages">
       <FileRef
+         location = "group:FileReader">
+      </FileRef>
+      <FileRef
          location = "group:Helper">
       </FileRef>
       <FileRef

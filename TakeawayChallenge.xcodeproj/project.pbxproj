@@ -15,6 +15,7 @@
 		19EF9B7326A2E776007A0BBA /* Helper in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B7226A2E776007A0BBA /* Helper */; };
 		19EF9B7726A2EA71007A0BBA /* RestaurantList in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B7626A2EA71007A0BBA /* RestaurantList */; };
 		19EF9B7C26A3E8A2007A0BBA /* RxHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B7B26A3E8A2007A0BBA /* RxHelper */; };
+		19EF9B7E26A3F7D8007A0BBA /* FileReader in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B7D26A3F7D8007A0BBA /* FileReader */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19EF9B7C26A3E8A2007A0BBA /* RxHelper in Frameworks */,
+				19EF9B7E26A3F7D8007A0BBA /* FileReader in Frameworks */,
 				19EF9B7326A2E776007A0BBA /* Helper in Frameworks */,
 				19EF9B7726A2EA71007A0BBA /* RestaurantList in Frameworks */,
 			);
@@ -153,6 +155,7 @@
 				19EF9B7226A2E776007A0BBA /* Helper */,
 				19EF9B7626A2EA71007A0BBA /* RestaurantList */,
 				19EF9B7B26A3E8A2007A0BBA /* RxHelper */,
+				19EF9B7D26A3F7D8007A0BBA /* FileReader */,
 			);
 			productName = TakeawayChallenge;
 			productReference = 19EF9B3E26A2E4A8007A0BBA /* TakeawayChallenge.app */;
@@ -601,6 +604,10 @@
 		19EF9B7B26A3E8A2007A0BBA /* RxHelper */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RxHelper;
+		};
+		19EF9B7D26A3F7D8007A0BBA /* FileReader */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FileReader;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

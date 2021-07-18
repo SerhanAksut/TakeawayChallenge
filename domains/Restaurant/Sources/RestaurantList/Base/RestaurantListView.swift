@@ -15,6 +15,13 @@ final class RestaurantListView: UIView {
     // MARK: - Properties
     let stackView = vStack()()
     
+    let sortingOptionsBarButton = UIBarButtonItem(
+        image: UIImage(named: "sorting-options"),
+        style: .plain,
+        target: self,
+        action: nil
+    )
+    
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
