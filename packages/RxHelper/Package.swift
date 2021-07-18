@@ -4,32 +4,24 @@
 import PackageDescription
 
 let package = Package(
-    name: "Restaurant",
+    name: "RxHelper",
     platforms: [
         .iOS(.v11)
     ],
     products: [
         .library(
-            name: "RestaurantList",
-            targets: ["RestaurantList"]),
+            name: "RxHelper",
+            targets: ["RxHelper"]),
     ],
     dependencies: [
-        .package(path: "Helper"),
-        .package(path: "RxHelper"),
         .package(url: "https://github.com/ReactiveX/RxSwift", from: "6.2.0")
     ],
     targets: [
         .target(
-            name: "RestaurantList",
+            name: "RxHelper",
             dependencies: [
-                "Helper",
-                "RxHelper",
                 .product(name: "RxCocoa", package: "RxSwift")
             ]
-        ),
-        .testTarget(
-            name: "RestaurantTests",
-            dependencies: ["RestaurantList"]
         ),
     ]
 )

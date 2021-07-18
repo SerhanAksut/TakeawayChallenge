@@ -19,6 +19,7 @@ final class RestaurantListView: UIView {
     init() {
         super.init(frame: .zero)
         
+        backgroundColor = .white
         addSubview(stackView)
         stackView.alignFitEdges().activate()
     }
