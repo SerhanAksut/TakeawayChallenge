@@ -14,13 +14,15 @@ let package = Package(
             targets: ["RestaurantList"]),
     ],
     dependencies: [
-        .package(path: "Helper")
+        .package(path: "Helper"),
+        .package(url: "https://github.com/ReactiveX/RxSwift", from: "6.2.0")
     ],
     targets: [
         .target(
             name: "RestaurantList",
             dependencies: [
-                "Helper"
+                "Helper",
+                .product(name: "RxCocoa", package: "RxSwift")
             ]
         ),
         .testTarget(

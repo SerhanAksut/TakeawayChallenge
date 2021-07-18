@@ -8,14 +8,19 @@
 import UIKit
 
 import func Helper.with
+import func Helper.vStack
 
 final class RestaurantListView: UIView {
     
     // MARK: - Properties
+    let stackView = vStack()()
     
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
+        
+        addSubview(stackView)
+        stackView.alignFitEdges().activate()
     }
     
     required init?(coder: NSCoder) {
