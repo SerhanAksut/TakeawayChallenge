@@ -8,7 +8,7 @@
 import RxSwift
 
 public struct RestaurantReader {
-    var restaurantList: () -> Single<[Restaurant]>
+    public var restaurantList: () -> Single<[Restaurant]>
     
     public init(
         restaurantList: @escaping () -> Single<[Restaurant]> = { .never() }

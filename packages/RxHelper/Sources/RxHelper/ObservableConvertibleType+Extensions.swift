@@ -10,11 +10,10 @@ import RxCocoa
 
 /// Returns a tuple value that contains(elements, errors) after materializing api call response.
 public extension ObservableConvertibleType {
-    func apiCall<Target>(
-            _ activityIndicator: ActivityIndicator? = nil,
-            call: @escaping (Element) -> Target
-        ) -> (Driver<Target.Element>, Driver<Error>) where Target: ObservableConvertibleType {
-        
+    func request<Target>(
+        _ activityIndicator: ActivityIndicator? = nil,
+        call: @escaping (Element) -> Target
+    ) -> (Driver<Target.Element>, Driver<Error>) where Target: ObservableConvertibleType {
         let stream = self.asObservable()
             .flatMapLatest { element -> Observable<Event<Target.Element>> in
                 if let activity = activityIndicator {

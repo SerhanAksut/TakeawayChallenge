@@ -9,7 +9,6 @@ import RxSwift
 import RxCocoa
 
 import class RxHelper.ActivityIndicator
-
 import struct RxHelper.ErrorObject
 
 import struct RestaurantReader.RestaurantReader
@@ -39,14 +38,35 @@ func restaurantListViewModel(
     _ inputs: RestaurantListViewModelInput
 ) -> RestaurantListViewModelOutput {
     let indicator = ActivityIndicator()
+    let (restaurantListResult, restaurantListError) = getRestaurantList(inputs, indicator)
     
     return RestaurantListViewModelOutput(
         navBarTitle: getNavBarTitleOutput(inputs),
         isLoading: indicator.asDriver(),
-        error: .never(),
-        datasource: .never(),
+        error: getErrorOutput(restaurantListError),
+        datasource: restaurantListResult,
         showSortingOptions: getShowSortingOptionsOutput(inputs)
     )
+}
+
+// MARK: - RestaurantList Request
+private func getRestaurantList(
+    _ inputs: RestaurantListViewModelInput,
+    _ indicator: ActivityIndicator
+) -> (Driver<[Restaurant]>, Driver<Error>) {
+    inputs.viewDidLoad
+        .observe(on: inputs.concurrentBackgroundQueue)
+        .request(indicator, call: inputs.restaurantReader.restaurantList)
+}
+
+// MARK: - Error Output
+private func getErrorOutput(
+    _ error: Driver<Error>
+) -> Driver<ErrorObject> {
+    error
+        .map { _ in
+            ErrorObject(message: Constants.errorMessage)
+        }
 }
 
 // MARK: - NavBarTitle Output
@@ -73,4 +93,5 @@ private func getShowSortingOptionsOutput(
 // MARK: - Constants
 private enum Constants {
     static let navBarTitle = "Restaurants"
+    static let errorMessage = "An error occured. Please try again."
 }

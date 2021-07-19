@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 
+import struct RestaurantReader.Restaurant
+
 final class RestaurantListViewController: UIViewController {
     
     // MARK: - Properties
@@ -15,6 +17,8 @@ final class RestaurantListViewController: UIViewController {
     
     private let bag = DisposeBag()
     private let viewModel: RestaurantListViewModel
+    
+    private let (restaurantsObserver, restaurantsEvent) = Observable<[Restaurant]>.pipe()
     
     // MARK: - Initialization
     init(with viewModel: @escaping RestaurantListViewModel) {
@@ -49,13 +53,14 @@ private extension RestaurantListViewController {
             outputs.navBarTitle.drive(navigationItem.rx.title),
             outputs.isLoading.drive(rx.showHideLoading),
             outputs.error.drive(rx.displayError),
+            outputs.datasource.drive(restaurantsObserver),
             outputs.showSortingOptions.drive(rx.showSortingOptions)
         )
     }
     
     var inputs: RestaurantListViewModelInput {
         let concurrentBackgroundQueue = ConcurrentDispatchQueueScheduler(qos: .background)
-        let concurrentUserInitiatedQueue = ConcurrentDispatchQueueScheduler(qos: .background)
+        let concurrentUserInitiatedQueue = ConcurrentDispatchQueueScheduler(qos: .userInitiated)
         
         return RestaurantListViewModelInput(
             concurrentBackgroundQueue: concurrentBackgroundQueue,
