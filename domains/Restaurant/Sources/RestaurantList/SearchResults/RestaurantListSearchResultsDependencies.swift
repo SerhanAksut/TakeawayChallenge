@@ -11,5 +11,6 @@ import struct RestaurantReader.Restaurant
 
 struct RestaurantListSearchResultsDependencies {
     let viewModel: RestaurantListSearchResultsViewModel
-    let restaurantsEvent: Observable<[Restaurant]>
+    let allRestaurantsEvent: Observable<[Restaurant]>
+    let searchResultsEvent: Observable<[Restaurant]>
 }

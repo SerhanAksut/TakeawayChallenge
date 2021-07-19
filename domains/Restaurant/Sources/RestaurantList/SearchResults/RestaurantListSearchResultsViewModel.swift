@@ -13,7 +13,8 @@ import struct RestaurantReader.Restaurant
 // MARK: - IO Models
 struct RestaurantListSearchResultsViewModelInput {
     var concurrentBackgroundQueue: SchedulerType
-    var restaurants: Observable<[Restaurant]> = .never()
+    var allRestaurants: Observable<[Restaurant]> = .never()
+    var searchResults: Observable<[Restaurant]> = .never()
 }
 
 struct RestaurantListSearchResultsViewModelOutput {
@@ -35,7 +36,11 @@ func restaurantListSearchResultsViewModel(
 private func getRestaurantsOutput(
     _ inputs: RestaurantListSearchResultsViewModelInput
 ) -> Driver<[Restaurant]> {
-    inputs.restaurants
+    Observable
+        .merge(
+            inputs.allRestaurants,
+            inputs.searchResults
+        )
         .observe(on: inputs.concurrentBackgroundQueue)
         .distinctUntilChanged()
         .asDriver(onErrorDriveWith: .never())

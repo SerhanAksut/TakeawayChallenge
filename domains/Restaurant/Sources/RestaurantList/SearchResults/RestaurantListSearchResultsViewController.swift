@@ -62,7 +62,8 @@ private extension RestaurantListSearchResultsViewController {
         
         return RestaurantListSearchResultsViewModelInput(
             concurrentBackgroundQueue: concurrentBackgroundQueue,
-            restaurants: dependencies.restaurantsEvent
+            allRestaurants: dependencies.allRestaurantsEvent,
+            searchResults: dependencies.searchResultsEvent
         )
     }
 }

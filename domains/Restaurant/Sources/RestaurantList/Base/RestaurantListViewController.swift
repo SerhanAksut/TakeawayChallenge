@@ -18,8 +18,8 @@ final class RestaurantListViewController: UIViewController {
     private lazy var searchBarController: RestaurantListSearchBarViewController = {
         let dependencies = RestaurantListSearchBarDependencies(
             viewModel: restaurantListSearchBarViewModel(_:),
-            restaurantsEvent: restaurantsEvent,
-            searchResultsObserver: restaurantsObserver
+            allRestaurantsEvent: allRestaurantsEvent,
+            searchResultsObserver: searchResultsObserver
         )
         let controller = RestaurantListSearchBarViewController(with: dependencies)
         return controller
@@ -28,7 +28,8 @@ final class RestaurantListViewController: UIViewController {
     private lazy var searchResultsController: RestaurantListSearchResultsViewController = {
         let dependencies = RestaurantListSearchResultsDependencies(
             viewModel: restaurantListSearchResultsViewModel(_:),
-            restaurantsEvent: restaurantsEvent
+            allRestaurantsEvent: allRestaurantsEvent,
+            searchResultsEvent: searchResultsEvent
         )
         let controller = RestaurantListSearchResultsViewController(with: dependencies)
         return controller
@@ -37,7 +38,8 @@ final class RestaurantListViewController: UIViewController {
     private let bag = DisposeBag()
     private let dependencies: RestaurantListDependencies
     
-    private let (restaurantsObserver, restaurantsEvent) = Observable<[Restaurant]>.pipe()
+    private let (allRestaurantsObserver, allRestaurantsEvent) = Observable<[Restaurant]>.pipe()
+    private let (searchResultsObserver, searchResultsEvent) = Observable<[Restaurant]>.pipe()
     
     // MARK: - Initialization
     init(with dependencies: RestaurantListDependencies) {
@@ -73,7 +75,7 @@ private extension RestaurantListViewController {
             outputs.navBarTitle.drive(navigationItem.rx.title),
             outputs.isLoading.drive(rx.showHideLoading),
             outputs.error.drive(rx.displayError),
-            outputs.datasource.drive(restaurantsObserver),
+            outputs.datasource.drive(allRestaurantsObserver),
             outputs.showSortingOptions
                 .drive(onNext: { [weak self] in
                     guard let self = self else { return }
