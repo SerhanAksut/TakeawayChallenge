@@ -11,12 +11,18 @@ let package = Package(
     products: [
         .library(
             name: "RestaurantList",
-            targets: ["RestaurantList"]),
+            targets: ["RestaurantList"]
+        ),
+        .library(
+            name: "SortingOptions",
+            targets: ["SortingOptions"]
+        ),
     ],
     dependencies: [
         .package(path: "Helper"),
         .package(path: "RxHelper"),
         .package(path: "FileReader"),
+        .package(path: "Entities"),
         .package(url: "https://github.com/ReactiveX/RxSwift", from: "6.2.0")
     ],
     targets: [
@@ -25,7 +31,15 @@ let package = Package(
             dependencies: [
                 "Helper",
                 "RxHelper",
+                "Entities",
                 .product(name: "RestaurantReader", package: "FileReader"),
+                .product(name: "RxCocoa", package: "RxSwift")
+            ]
+        ),
+        .target(
+            name: "SortingOptions",
+            dependencies: [
+                "Entities",
                 .product(name: "RxCocoa", package: "RxSwift")
             ]
         ),

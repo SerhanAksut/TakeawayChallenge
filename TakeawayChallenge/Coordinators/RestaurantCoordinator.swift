@@ -9,8 +9,11 @@ import UIKit
 import RxSwift
 
 import struct RestaurantList.RestaurantListBuilder
+import struct SortingOptions.SortingOptionsBuilder
 
 import protocol Coordinator.RestaurantCoordinatorProtocol
+
+import struct Entities.SortingOptionsDatasource
 
 final class RestaurantCoordinator: RestaurantCoordinatorProtocol {
     private weak var navigationController: UINavigationController?
@@ -18,16 +21,22 @@ final class RestaurantCoordinator: RestaurantCoordinatorProtocol {
     func start(window: UIWindow?) {
         let controller = RestaurantListBuilder.build(coordinator: self)
         let navigationController = UINavigationController(rootViewController: controller)
-        navigationController.navigationBar.barTintColor = .appOrangeColor
-        navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.tintColor = .white
+        navigationController.configure()
         window?.rootViewController = navigationController
         self.navigationController = navigationController
     }
     
-    var showSortingOptions: Binder<[String]> {
-        Binder(self) { target, options in
-            
+    var showSortingOptions: Binder<([SortingOptionsDatasource], AnyObserver<Int?>)> {
+        Binder(self) { target, data in
+            let options = data.0
+            let selectedIndexObserver = data.1
+            let controller = SortingOptionsBuilder.build(
+                options: options,
+                selectedIndexObserver: selectedIndexObserver
+            )
+            let navController = UINavigationController(rootViewController: controller)
+            navController.configure()
+            self.navigationController?.present(navController, animated: true)
         }
     }
 }

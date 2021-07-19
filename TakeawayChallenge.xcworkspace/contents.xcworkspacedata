@@ -15,6 +15,9 @@
          location = "group:Coordinator">
       </FileRef>
       <FileRef
+         location = "group:Entities">
+      </FileRef>
+      <FileRef
          location = "group:FileReader">
       </FileRef>
       <FileRef

@@ -11,3 +11,13 @@ public struct Restaurant: Decodable, Equatable {
     public let status: RestaurantStatus
     public let sortingValues: RestaurantSortingValues
 }
+
+// MARK: - Extensions
+public extension Array where Element == Restaurant {
+    func reorder() -> Self {
+        let open = self.filter { $0.status == .open }
+        let orderAhead = self.filter { $0.status == .orderAhead }
+        let closed = self.filter { $0.status == .closed }
+        return open + orderAhead + closed
+    }
+}

@@ -10,6 +10,8 @@ import RxSwift
 
 import struct RestaurantReader.Restaurant
 
+import enum Entities.SortingOptionType
+
 final class RestaurantListViewController: UIViewController {
     
     // MARK: - Properties
@@ -29,7 +31,8 @@ final class RestaurantListViewController: UIViewController {
         let dependencies = RestaurantListSearchResultsDependencies(
             viewModel: restaurantListSearchResultsViewModel(_:),
             allRestaurantsEvent: allRestaurantsEvent,
-            searchResultsEvent: searchResultsEvent
+            searchResultsEvent: searchResultsEvent,
+            sortingOptionSelectedAtIndexEvent: sortingOptionSelectedAtIndexEvent
         )
         let controller = RestaurantListSearchResultsViewController(with: dependencies)
         return controller
@@ -40,6 +43,7 @@ final class RestaurantListViewController: UIViewController {
     
     private let (allRestaurantsObserver, allRestaurantsEvent) = Observable<[Restaurant]>.pipe()
     private let (searchResultsObserver, searchResultsEvent) = Observable<[Restaurant]>.pipe()
+    private let (sortingOptionSelectedAtIndexObserver, sortingOptionSelectedAtIndexEvent) = Observable<Int?>.pipe()
     
     // MARK: - Initialization
     init(with dependencies: RestaurantListDependencies) {
@@ -77,9 +81,10 @@ private extension RestaurantListViewController {
             outputs.error.drive(rx.displayError),
             outputs.datasource.drive(allRestaurantsObserver),
             outputs.showSortingOptions
-                .drive(onNext: { [weak self] in
+                .drive(onNext: { [weak self] sortingOptionsDatasource in
                     guard let self = self else { return }
-                    self.dependencies.coordinator?.showSortingOptions.onNext($0)
+                    let data = (sortingOptionsDatasource, self.sortingOptionSelectedAtIndexObserver)
+                    self.dependencies.coordinator?.showSortingOptions.onNext(data)
                 })
         )
     }
@@ -92,7 +97,8 @@ private extension RestaurantListViewController {
             concurrentBackgroundQueue: concurrentBackgroundQueue,
             concurrentUserInitiatedQueue: concurrentUserInitiatedQueue,
             viewDidLoad: Observable.just(()),
-            sortingOptionsButtonTapped: viewSource.sortingOptionsBarButton.rx.tap.asObservable()
+            sortingOptionsButtonTapped: viewSource.sortingOptionsBarButton.rx.tap.asObservable(),
+            sortingOptionSelectedAtIndex: sortingOptionSelectedAtIndexEvent
         )
     }
 }

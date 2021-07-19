@@ -25,7 +25,7 @@ private extension RestaurantReader {
             )
             switch result {
             case .success(let response):
-                single(.success(response.restaurants))
+                single(.success(response.restaurants.reorder()))
             case .failure(let error):
                 single(.failure(error))
             }

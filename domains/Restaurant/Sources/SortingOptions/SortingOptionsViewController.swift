@@ -2,22 +2,22 @@
 //  File.swift
 //  
 //
-//  Created by Serhan Aksut on 17.07.2021.
+//  Created by Serhan Aksut on 19.07.2021.
 //
 
 import UIKit
 import RxSwift
 
-final class RestaurantListSearchResultsViewController: UIViewController {
+final class SortingOptionsViewController: UIViewController {
     
     // MARK: - Properties
-    private let viewSource = RestaurantListSearchResultsView()
+    private let viewSource = SortingOptionsView()
     
     private let bag = DisposeBag()
-    private let dependencies: RestaurantListSearchResultsDependencies
+    private let dependencies: SortingOptionsDependencies
     
     // MARK: - Initialization
-    init(with dependencies: RestaurantListSearchResultsDependencies) {
+    init(with dependencies: SortingOptionsDependencies) {
         self.dependencies = dependencies
         
         super.init(nibName: nil, bundle: nil)
@@ -35,21 +35,28 @@ final class RestaurantListSearchResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = Constants.navBarTitle
         bindViewModelOutputs()
     }
 }
 
 // MARK: - Bind ViewModel Outputs
-private extension RestaurantListSearchResultsViewController {
+private extension SortingOptionsViewController {
     func bindViewModelOutputs() {
         let outputs = dependencies.viewModel(inputs)
         
         bag.insert(
-            outputs.restaurants
+            outputs.selectedIndex
+                .drive(onNext: { [weak self] in
+                    self?.dependencies.selectedIndexObserver.onNext($0)
+                    self?.dismiss(animated: true)
+                }),
+            
+            outputs.datasource
                 .asObservable()
                 .bind(to: viewSource.tableView.rx.items(
-                        cellIdentifier: RestaurantListSearchResultsCell.viewIdentifier,
-                        cellType: RestaurantListSearchResultsCell.self
+                        cellIdentifier: SortingOptionsCell.viewIdentifier,
+                        cellType: SortingOptionsCell.self
                     )
                 ) { index, item, cell in
                     cell.populate.onNext(item)
@@ -57,16 +64,26 @@ private extension RestaurantListSearchResultsViewController {
         )
     }
     
-    var inputs: RestaurantListSearchResultsViewModelInput {
+    var inputs: SortingOptionsViewModelInput {
         let concurrentBackgroundQueue = ConcurrentDispatchQueueScheduler(qos: .background)
         let concurrentUserInitiatedQueue = ConcurrentDispatchQueueScheduler(qos: .userInitiated)
         
-        return RestaurantListSearchResultsViewModelInput(
+        let indexSelected = viewSource.tableView.rx.itemSelected
+            .asObservable()
+            .do(onNext: { [weak viewSource] in
+                viewSource?.tableView.deselectRow(at: $0, animated: true)
+            })
+        
+        return SortingOptionsViewModelInput(
             concurrentBackgroundQueue: concurrentBackgroundQueue,
             concurrentUserInitiatedQueue: concurrentUserInitiatedQueue,
-            allRestaurants: dependencies.allRestaurantsEvent,
-            searchResults: dependencies.searchResultsEvent,
-            sortingOptionSelectedAtIndex: dependencies.sortingOptionSelectedAtIndexEvent
+            options: Observable.just(dependencies.options),
+            indexSelected: indexSelected
         )
     }
+}
+
+// MARK: - Constants
+private enum Constants {
+    static let navBarTitle = "Sorting Options"
 }

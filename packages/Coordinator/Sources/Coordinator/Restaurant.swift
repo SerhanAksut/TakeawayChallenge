@@ -7,6 +7,8 @@
 
 import RxSwift
 
+import struct Entities.SortingOptionsDatasource
+
 public protocol RestaurantCoordinatorProtocol: AnyObject {
-    var showSortingOptions: Binder<[String]> { get }
+    var showSortingOptions: Binder<([SortingOptionsDatasource], AnyObserver<Int?>)> { get }
 }

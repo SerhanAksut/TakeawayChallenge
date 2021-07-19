@@ -13,4 +13,5 @@ struct RestaurantListSearchResultsDependencies {
     let viewModel: RestaurantListSearchResultsViewModel
     let allRestaurantsEvent: Observable<[Restaurant]>
     let searchResultsEvent: Observable<[Restaurant]>
+    let sortingOptionSelectedAtIndexEvent: Observable<Int?>
 }

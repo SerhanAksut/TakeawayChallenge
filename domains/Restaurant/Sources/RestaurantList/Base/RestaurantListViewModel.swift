@@ -14,6 +14,9 @@ import struct RxHelper.ErrorObject
 import struct RestaurantReader.RestaurantReader
 import struct RestaurantReader.Restaurant
 
+import enum Entities.SortingOptionType
+import struct Entities.SortingOptionsDatasource
+
 // MARK: - IO Models
 struct RestaurantListViewModelInput {
     var concurrentBackgroundQueue: SchedulerType
@@ -21,6 +24,7 @@ struct RestaurantListViewModelInput {
     var restaurantReader: RestaurantReader = .live
     var viewDidLoad: Observable<Void> = .never()
     var sortingOptionsButtonTapped: Observable<Void> = .never()
+    var sortingOptionSelectedAtIndex: Observable<Int?> = .never()
 }
 
 struct RestaurantListViewModelOutput {
@@ -28,7 +32,7 @@ struct RestaurantListViewModelOutput {
     let isLoading: Driver<Bool>
     let error: Driver<ErrorObject>
     let datasource: Driver<[Restaurant]>
-    let showSortingOptions: Driver<[String]>
+    let showSortingOptions: Driver<[SortingOptionsDatasource]>
 }
 
 typealias RestaurantListViewModel = (RestaurantListViewModelInput) -> RestaurantListViewModelOutput
@@ -84,10 +88,19 @@ private func getNavBarTitleOutput(
 // MARK: - ShowSortingOptions Output
 private func getShowSortingOptionsOutput(
     _ inputs: RestaurantListViewModelInput
-) -> Driver<[String]> {
+) -> Driver<[SortingOptionsDatasource]> {
     inputs.sortingOptionsButtonTapped
         .observe(on: inputs.concurrentUserInitiatedQueue)
-        .map { [] }
+        .withLatestFrom(inputs.sortingOptionSelectedAtIndex.startWith(nil))
+        .map { selectedOptionIndex -> [SortingOptionsDatasource] in
+            let allOptions = SortingOptionType.allCases.map(\.rawValue)
+            return allOptions
+                .enumerated()
+                .map { index, option -> SortingOptionsDatasource in
+                    let isSelected = index == selectedOptionIndex
+                    return SortingOptionsDatasource(option: option, isSelected: isSelected)
+                }
+        }
         .asDriver(onErrorDriveWith: .never())
 }
 
