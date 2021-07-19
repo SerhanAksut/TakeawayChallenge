@@ -5,4 +5,11 @@
 //  Created by Serhan Aksut on 17.07.2021.
 //
 
-import Foundation
+import RxSwift
+
+import struct RestaurantReader.Restaurant
+
+struct RestaurantListSearchResultDependencies {
+    let viewModel: RestaurantListSearchResultsViewModel
+    let restaurantsEvent: Observable<[Restaurant]>
+}
