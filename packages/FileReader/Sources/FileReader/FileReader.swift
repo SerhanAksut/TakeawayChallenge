@@ -8,6 +8,7 @@ public func readFile<T: Decodable>(
     fileType: FileType = .json
 ) -> Result<T, FileReaderError> {
     guard let path = bundle.path(forResource: file, ofType: fileType.rawValue) else {
+        print("FileReaderError: ==> invalid path for \(bundle)")
         return .failure(.invalidPath)
     }
     let url = URL(fileURLWithPath: path)
@@ -15,6 +16,7 @@ public func readFile<T: Decodable>(
     do {
         data = try Data(contentsOf: url)
     } catch {
+        print("FileReaderError: ==> invalid data with error: \(error)")
         return .failure(.invalidData)
     }
     let jsonDecoder = JSONDecoder()
@@ -22,6 +24,7 @@ public func readFile<T: Decodable>(
         let model = try jsonDecoder.decode(T.self, from: data!)
         return .success(model)
     } catch {
+        print("FileReaderError: ==> parse error with error: \(error)")
         return .failure(.parseError)
     }
 }

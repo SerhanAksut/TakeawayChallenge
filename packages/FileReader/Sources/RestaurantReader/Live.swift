@@ -20,12 +20,12 @@ private extension RestaurantReader {
         Single.create { single in
             let result = readFile(
                 bundle: bundle,
-                type: [Restaurant].self,
+                type: RestaurantListResponse.self,
                 file: File.restaurantList.rawValue
             )
             switch result {
-            case .success(let restaurantList):
-                single(.success(restaurantList))
+            case .success(let response):
+                single(.success(response.restaurants))
             case .failure(let error):
                 single(.failure(error))
             }

@@ -16,6 +16,9 @@
 		19EF9B8426A41321007A0BBA /* Helper in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B8326A41321007A0BBA /* Helper */; };
 		19EF9B8626A4141C007A0BBA /* RestaurantList in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B8526A4141C007A0BBA /* RestaurantList */; };
 		19EF9B8826A4141C007A0BBA /* RxHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B8726A4141C007A0BBA /* RxHelper */; };
+		19EF9B9426A5BC8B007A0BBA /* Coordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B9326A5BC8B007A0BBA /* Coordinator */; };
+		19EF9B9726A5BD6F007A0BBA /* RestaurantCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF9B9626A5BD6F007A0BBA /* RestaurantCoordinator.swift */; };
+		19EF9B9B26A5C6EC007A0BBA /* RestaurantList.json in Resources */ = {isa = PBXBuildFile; fileRef = 19EF9B9A26A5C6EC007A0BBA /* RestaurantList.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,8 @@
 		19EF9B5F26A2E4A9007A0BBA /* TakeawayChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeawayChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EF9B6326A2E4A9007A0BBA /* TakeawayChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeawayChallengeUITests.swift; sourceTree = "<group>"; };
 		19EF9B6526A2E4A9007A0BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19EF9B9626A5BD6F007A0BBA /* RestaurantCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCoordinator.swift; sourceTree = "<group>"; };
+		19EF9B9A26A5C6EC007A0BBA /* RestaurantList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = RestaurantList.json; path = ../../../../../../Desktop/RestaurantList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 				19EF9B8626A4141C007A0BBA /* RestaurantList in Frameworks */,
 				19EF9B8826A4141C007A0BBA /* RxHelper in Frameworks */,
 				19EF9B8226A41321007A0BBA /* RestaurantReader in Frameworks */,
+				19EF9B9426A5BC8B007A0BBA /* Coordinator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +110,10 @@
 			children = (
 				19EF9B4126A2E4A8007A0BBA /* AppDelegate.swift */,
 				19EF9B4A26A2E4A8007A0BBA /* Assets.xcassets */,
-				19EF9B4C26A2E4A8007A0BBA /* LaunchScreen.storyboard */,
+				19EF9B9526A5BD51007A0BBA /* Coordinators */,
 				19EF9B4F26A2E4A8007A0BBA /* Info.plist */,
+				19EF9B4C26A2E4A8007A0BBA /* LaunchScreen.storyboard */,
+				19EF9B9826A5C695007A0BBA /* LocalFiles */,
 			);
 			path = TakeawayChallenge;
 			sourceTree = "<group>";
@@ -135,6 +143,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		19EF9B9526A5BD51007A0BBA /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				19EF9B9626A5BD6F007A0BBA /* RestaurantCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		19EF9B9826A5C695007A0BBA /* LocalFiles */ = {
+			isa = PBXGroup;
+			children = (
+				19EF9B9926A5C6B8007A0BBA /* Restaurant */,
+			);
+			path = LocalFiles;
+			sourceTree = "<group>";
+		};
+		19EF9B9926A5C6B8007A0BBA /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				19EF9B9A26A5C6EC007A0BBA /* RestaurantList.json */,
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,6 +188,7 @@
 				19EF9B8326A41321007A0BBA /* Helper */,
 				19EF9B8526A4141C007A0BBA /* RestaurantList */,
 				19EF9B8726A4141C007A0BBA /* RxHelper */,
+				19EF9B9326A5BC8B007A0BBA /* Coordinator */,
 			);
 			productName = TakeawayChallenge;
 			productReference = 19EF9B3E26A2E4A8007A0BBA /* TakeawayChallenge.app */;
@@ -244,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19EF9B9B26A5C6EC007A0BBA /* RestaurantList.json in Resources */,
 				19EF9B4E26A2E4A8007A0BBA /* LaunchScreen.storyboard in Resources */,
 				19EF9B4B26A2E4A8007A0BBA /* Assets.xcassets in Resources */,
 			);
@@ -271,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19EF9B4226A2E4A8007A0BBA /* AppDelegate.swift in Sources */,
+				19EF9B9726A5BD6F007A0BBA /* RestaurantCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +643,10 @@
 		19EF9B8726A4141C007A0BBA /* RxHelper */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RxHelper;
+		};
+		19EF9B9326A5BC8B007A0BBA /* Coordinator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Coordinator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

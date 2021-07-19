@@ -9,7 +9,7 @@ import Foundation
 
 final class BundleClass {}
 
-let bundle = Bundle(for: BundleClass.self)
+let bundle = Bundle.main
 
 enum File: String {
     case restaurantList = "RestaurantList"

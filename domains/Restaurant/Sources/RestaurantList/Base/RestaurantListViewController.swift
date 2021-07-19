@@ -35,13 +35,13 @@ final class RestaurantListViewController: UIViewController {
     }()
     
     private let bag = DisposeBag()
-    private let viewModel: RestaurantListViewModel
+    private let dependencies: RestaurantListDependencies
     
     private let (restaurantsObserver, restaurantsEvent) = Observable<[Restaurant]>.pipe()
     
     // MARK: - Initialization
-    init(with viewModel: @escaping RestaurantListViewModel) {
-        self.viewModel = viewModel
+    init(with dependencies: RestaurantListDependencies) {
+        self.dependencies = dependencies
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -67,14 +67,18 @@ final class RestaurantListViewController: UIViewController {
 // MARK: - Bind ViewModel Outputs
 private extension RestaurantListViewController {
     func bindViewModelOutputs() {
-        let outputs = viewModel(inputs)
+        let outputs = dependencies.viewModel(inputs)
         
         bag.insert(
             outputs.navBarTitle.drive(navigationItem.rx.title),
             outputs.isLoading.drive(rx.showHideLoading),
             outputs.error.drive(rx.displayError),
             outputs.datasource.drive(restaurantsObserver),
-            outputs.showSortingOptions.drive(rx.showSortingOptions)
+            outputs.showSortingOptions
+                .drive(onNext: { [weak self] in
+                    guard let self = self else { return }
+                    self.dependencies.coordinator?.showSortingOptions.onNext($0)
+                })
         )
     }
     
