@@ -35,14 +35,12 @@ final class RestaurantListSearchResultsCell: UITableViewCell {
     private let statusLabel = makeLabel(
         textAlignment: .right,
         font: .systemFont(ofSize: 12),
-        textColor: .appOrangeColor,
-        huggingPriority: .required
+        textColor: .appOrangeColor
     )
     
     private lazy var topHStackView = hStack(space: 8)(
         ratingAverageLabel,
-        restaurantNameLabel,
-        statusLabel
+        restaurantNameLabel
     )
     
     private let distanceView = RestaurantListSearchResultsInfoItemView()
@@ -53,7 +51,7 @@ final class RestaurantListSearchResultsCell: UITableViewCell {
         distanceView,
         deliveryCostView,
         minCostView,
-        UIView()
+        statusLabel
     )
     
     private lazy var baseStackView = vStack(space: 10)(
