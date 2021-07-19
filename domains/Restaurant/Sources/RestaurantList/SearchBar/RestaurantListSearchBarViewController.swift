@@ -45,7 +45,7 @@ private extension RestaurantListSearchBarViewController {
         let outputs = dependencies.viewModel(inputs)
         
         bag.insert(
-            outputs.searchResults.drive(dependencies.restaurantsObserver)
+            outputs.searchResults.drive(dependencies.searchResultsObserver)
         )
     }
     
@@ -54,7 +54,8 @@ private extension RestaurantListSearchBarViewController {
         
         return RestaurantListSearchBarViewModelInput(
             concurrentUserInitiatedQueue: concurrentUserInitiatedQueue,
-            searchText: viewSource.searchBar.rx.text.orEmpty.asObservable()
+            searchText: viewSource.searchBar.rx.text.orEmpty.asObservable(),
+            allRestaurants: dependencies.allRestaurantsEvent
         )
     }
 }

@@ -44,10 +44,8 @@ private func getSearchResultsOutput(
                 return allRestaurants
             } else {
                 let result = allRestaurants.filter {
-                    let trimmedName = $0.name.trimmingCharacters(in: .whitespaces)
-                    return trimmedName
-                        .lowercased()
-                        .contains(trimmedKeyword)
+                    let trimmedName = $0.name.trimmingCharacters(in: .whitespaces).lowercased()
+                    return trimmedName.contains(trimmedKeyword)
                 }
                 return result
             }
