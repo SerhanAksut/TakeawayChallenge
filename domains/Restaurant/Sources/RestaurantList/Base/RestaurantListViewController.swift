@@ -59,6 +59,7 @@ final class RestaurantListViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = viewSource.sortingOptionsBarButton
+        addChildren()
         bindViewModelOutputs()
     }
 }
@@ -87,5 +88,20 @@ private extension RestaurantListViewController {
             viewDidLoad: Observable.just(()),
             sortingOptionsButtonTapped: viewSource.sortingOptionsBarButton.rx.tap.asObservable()
         )
+    }
+}
+
+// MARK: - Internal Helpers
+private extension RestaurantListViewController {
+    func addChildren() {
+        [
+            searchBarController,
+            searchResultsController
+        ]
+        .forEach {
+            addChildController(controller: $0) {
+                viewSource.stackView.addArrangedSubview($0)
+            }
+        }
     }
 }

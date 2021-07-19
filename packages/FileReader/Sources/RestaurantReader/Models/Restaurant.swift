@@ -9,4 +9,5 @@ public struct Restaurant: Decodable, Equatable {
     public let id: String
     public let name: String
     public let status: RestaurantStatus
+    public let sortingValues: RestaurantSortingValues
 }
