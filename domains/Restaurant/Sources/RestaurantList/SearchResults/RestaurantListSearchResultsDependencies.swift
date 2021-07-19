@@ -9,7 +9,7 @@ import RxSwift
 
 import struct RestaurantReader.Restaurant
 
-struct RestaurantListSearchResultDependencies {
+struct RestaurantListSearchResultsDependencies {
     let viewModel: RestaurantListSearchResultsViewModel
     let restaurantsEvent: Observable<[Restaurant]>
 }

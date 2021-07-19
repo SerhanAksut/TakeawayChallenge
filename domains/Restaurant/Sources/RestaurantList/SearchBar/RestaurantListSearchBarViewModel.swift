@@ -14,7 +14,7 @@ import struct RestaurantReader.Restaurant
 struct RestaurantListSearchBarViewModelInput {
     var concurrentUserInitiatedQueue: SchedulerType
     var searchText: Observable<String> = .never()
-    var allRestaurants: Observable<[Restaurant]> = .never()
+    var restaurants: Observable<[Restaurant]> = .never()
 }
 
 struct RestaurantListSearchBarViewModelOutput {
@@ -38,12 +38,12 @@ private func getSearchResultsOutput(
 ) -> Driver<[Restaurant]> {
     inputs.searchText
         .observe(on: inputs.concurrentUserInitiatedQueue)
-        .withLatestFrom(inputs.allRestaurants) { keyword, allRestaurants -> [Restaurant] in
+        .withLatestFrom(inputs.restaurants) { keyword, restaurants -> [Restaurant] in
             let trimmedKeyword = keyword.trimmingCharacters(in: .whitespaces).lowercased()
             if trimmedKeyword.isEmpty {
-                return allRestaurants
+                return restaurants
             } else {
-                let result = allRestaurants.filter {
+                let result = restaurants.filter {
                     let trimmedName = $0.name.trimmingCharacters(in: .whitespaces).lowercased()
                     return trimmedName.contains(trimmedKeyword)
                 }

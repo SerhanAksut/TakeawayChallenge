@@ -14,10 +14,10 @@ final class RestaurantListSearchResultsViewController: UIViewController {
     private let viewSource = RestaurantListSearchResultsView()
     
     private let bag = DisposeBag()
-    private let dependencies: RestaurantListSearchResultDependencies
+    private let dependencies: RestaurantListSearchResultsDependencies
     
     // MARK: - Initialization
-    init(with dependencies: RestaurantListSearchResultDependencies) {
+    init(with dependencies: RestaurantListSearchResultsDependencies) {
         self.dependencies = dependencies
         
         super.init(nibName: nil, bundle: nil)

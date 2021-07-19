@@ -55,7 +55,7 @@ private extension RestaurantListSearchBarViewController {
         return RestaurantListSearchBarViewModelInput(
             concurrentUserInitiatedQueue: concurrentUserInitiatedQueue,
             searchText: viewSource.searchBar.rx.text.orEmpty.asObservable(),
-            allRestaurants: dependencies.allRestaurantsEvent
+            restaurants: dependencies.restaurantsEvent
         )
     }
 }
