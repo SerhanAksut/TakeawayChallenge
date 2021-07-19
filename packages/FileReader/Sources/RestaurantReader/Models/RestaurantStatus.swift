@@ -5,6 +5,8 @@
 //  Created by Serhan Aksut on 18.07.2021.
 //
 
+import UIKit
+
 public enum RestaurantStatus: String, Decodable, Equatable {
     case open
     case closed
@@ -28,6 +30,12 @@ public enum RestaurantStatus: String, Decodable, Equatable {
         case .unknown:
             return nil
         }
+    }
+    
+    public var alpha: CGFloat {
+        self == .closed
+            ? 0.5
+            : 1
     }
 }
 

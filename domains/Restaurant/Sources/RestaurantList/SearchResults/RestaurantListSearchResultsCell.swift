@@ -37,7 +37,6 @@ final class RestaurantListSearchResultsCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .white
         addSubview(stackView)
         stackView
             .alignEdges(leading: 15, trailing: -15, top: 10, bottom: -10)
@@ -57,6 +56,7 @@ extension RestaurantListSearchResultsCell {
     var populate: Binder<Restaurant> {
         Binder(self) { target, restaurant in
             target.restaurantNameLabel.text = restaurant.name
+            target.restaurantNameLabel.alpha = restaurant.status.alpha
             target.statusLabel.text = restaurant.status.text
             target.statusLabel.isHidden = restaurant.status.text == nil
         }
