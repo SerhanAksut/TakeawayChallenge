@@ -68,7 +68,7 @@ final class RestaurantListSearchResultsCell: UITableViewCell {
         addSubview(baseStackView)
         [
             baseStackView.alignEdges(leading: 15, trailing: -15, top: 10, bottom: -10),
-            ratingAverageLabel.alignSize(width: 25, height: 25)
+            ratingAverageLabel.alignSize(width: 30, height: 30)
         ]
         .flatMap { $0 }
         .activate()
