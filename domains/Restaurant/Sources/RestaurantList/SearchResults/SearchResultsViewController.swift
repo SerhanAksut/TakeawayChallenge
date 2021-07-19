@@ -8,16 +8,16 @@
 import UIKit
 import RxSwift
 
-final class RestaurantListSearchResultsViewController: UIViewController {
+final class SearchResultsViewController: UIViewController {
     
     // MARK: - Properties
-    private let viewSource = RestaurantListSearchResultsView()
+    private let viewSource = SearchResultsView()
     
     private let bag = DisposeBag()
-    private let dependencies: RestaurantListSearchResultsDependencies
+    private let dependencies: SearchResultsDependencies
     
     // MARK: - Initialization
-    init(with dependencies: RestaurantListSearchResultsDependencies) {
+    init(with dependencies: SearchResultsDependencies) {
         self.dependencies = dependencies
         
         super.init(nibName: nil, bundle: nil)
@@ -40,7 +40,7 @@ final class RestaurantListSearchResultsViewController: UIViewController {
 }
 
 // MARK: - Bind ViewModel Outputs
-private extension RestaurantListSearchResultsViewController {
+private extension SearchResultsViewController {
     func bindViewModelOutputs() {
         let outputs = dependencies.viewModel(inputs)
         
@@ -48,8 +48,8 @@ private extension RestaurantListSearchResultsViewController {
             outputs.restaurants
                 .asObservable()
                 .bind(to: viewSource.tableView.rx.items(
-                        cellIdentifier: RestaurantListSearchResultsCell.viewIdentifier,
-                        cellType: RestaurantListSearchResultsCell.self
+                        cellIdentifier: SearchResultsCell.viewIdentifier,
+                        cellType: SearchResultsCell.self
                     )
                 ) { index, item, cell in
                     cell.populate.onNext(item)
@@ -57,11 +57,11 @@ private extension RestaurantListSearchResultsViewController {
         )
     }
     
-    var inputs: RestaurantListSearchResultsViewModelInput {
+    var inputs: SearchResultsViewModelInput {
         let concurrentBackgroundQueue = ConcurrentDispatchQueueScheduler(qos: .background)
         let concurrentUserInitiatedQueue = ConcurrentDispatchQueueScheduler(qos: .userInitiated)
         
-        return RestaurantListSearchResultsViewModelInput(
+        return SearchResultsViewModelInput(
             concurrentBackgroundQueue: concurrentBackgroundQueue,
             concurrentUserInitiatedQueue: concurrentUserInitiatedQueue,
             allRestaurants: dependencies.allRestaurantsEvent,

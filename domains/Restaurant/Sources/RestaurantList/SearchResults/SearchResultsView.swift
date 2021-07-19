@@ -9,7 +9,7 @@ import UIKit
 
 import func Helper.with
 
-final class RestaurantListSearchResultsView: UIView {
+final class SearchResultsView: UIView {
     
     // MARK: - Properties
     let tableView = with(UITableView(frame: .zero)) {
@@ -17,8 +17,8 @@ final class RestaurantListSearchResultsView: UIView {
         $0.estimatedRowHeight = 80
         $0.keyboardDismissMode = .interactive
         $0.register(
-            RestaurantListSearchResultsCell.self,
-            forCellReuseIdentifier: RestaurantListSearchResultsCell.viewIdentifier
+            SearchResultsCell.self,
+            forCellReuseIdentifier: SearchResultsCell.viewIdentifier
         )
         $0.tableFooterView = UIView()
     }

@@ -11,30 +11,30 @@ import RxCocoa
 import struct RestaurantReader.Restaurant
 
 // MARK: - IO Models
-struct RestaurantListSearchBarViewModelInput {
+struct SearchBarViewModelInput {
     var concurrentUserInitiatedQueue: SchedulerType
     var searchText: Observable<String> = .never()
     var allRestaurants: Observable<[Restaurant]> = .never()
 }
 
-struct RestaurantListSearchBarViewModelOutput {
+struct SearchBarViewModelOutput {
     let searchResults: Driver<[Restaurant]>
 }
 
-typealias RestaurantListSearchBarViewModel = (RestaurantListSearchBarViewModelInput) -> RestaurantListSearchBarViewModelOutput
+typealias SearchBarViewModel = (SearchBarViewModelInput) -> SearchBarViewModelOutput
 
 // MARK: - IO Mapping
-func restaurantListSearchBarViewModel(
-    _ inputs: RestaurantListSearchBarViewModelInput
-) -> RestaurantListSearchBarViewModelOutput {
-    RestaurantListSearchBarViewModelOutput(
+func searchBarViewModel(
+    _ inputs: SearchBarViewModelInput
+) -> SearchBarViewModelOutput {
+    SearchBarViewModelOutput(
         searchResults: getSearchResultsOutput(inputs)
     )
 }
 
 // MARK: - SearchResults Output
 private func getSearchResultsOutput(
-    _ inputs: RestaurantListSearchBarViewModelInput
+    _ inputs: SearchBarViewModelInput
 ) -> Driver<[Restaurant]> {
     inputs.searchText
         .observe(on: inputs.concurrentUserInitiatedQueue)

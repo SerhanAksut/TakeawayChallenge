@@ -9,8 +9,8 @@ import RxSwift
 
 import struct RestaurantReader.Restaurant
 
-struct RestaurantListSearchResultsDependencies {
-    let viewModel: RestaurantListSearchResultsViewModel
+struct SearchResultsDependencies {
+    let viewModel: SearchResultsViewModel
     let allRestaurantsEvent: Observable<[Restaurant]>
     let searchResultsEvent: Observable<[Restaurant]>
     let sortingOptionSelectedAtIndexEvent: Observable<Int?>

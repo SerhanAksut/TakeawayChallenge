@@ -17,24 +17,24 @@ final class RestaurantListViewController: UIViewController {
     // MARK: - Properties
     private let viewSource = RestaurantListView()
     
-    private lazy var searchBarController: RestaurantListSearchBarViewController = {
-        let dependencies = RestaurantListSearchBarDependencies(
-            viewModel: restaurantListSearchBarViewModel(_:),
+    private lazy var searchBarController: SearchBarViewController = {
+        let dependencies = SearchBarDependencies(
+            viewModel: searchBarViewModel(_:),
             allRestaurantsEvent: allRestaurantsEvent,
             searchResultsObserver: searchResultsObserver
         )
-        let controller = RestaurantListSearchBarViewController(with: dependencies)
+        let controller = SearchBarViewController(with: dependencies)
         return controller
     }()
     
-    private lazy var searchResultsController: RestaurantListSearchResultsViewController = {
-        let dependencies = RestaurantListSearchResultsDependencies(
-            viewModel: restaurantListSearchResultsViewModel(_:),
+    private lazy var searchResultsController: SearchResultsViewController = {
+        let dependencies = SearchResultsDependencies(
+            viewModel: searchResultsViewModel(_:),
             allRestaurantsEvent: allRestaurantsEvent,
             searchResultsEvent: searchResultsEvent,
             sortingOptionSelectedAtIndexEvent: sortingOptionSelectedAtIndexEvent
         )
-        let controller = RestaurantListSearchResultsViewController(with: dependencies)
+        let controller = SearchResultsViewController(with: dependencies)
         return controller
     }()
     

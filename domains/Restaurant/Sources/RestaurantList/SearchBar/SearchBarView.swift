@@ -9,7 +9,7 @@ import UIKit
 
 import func Helper.with
 
-final class RestaurantListSearchBarView: UIView {
+final class SearchBarView: UIView {
     
     // MARK: - Properties
     let searchBar = with(UISearchBar()) {

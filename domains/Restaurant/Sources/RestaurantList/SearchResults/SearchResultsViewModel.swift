@@ -13,7 +13,7 @@ import struct RestaurantReader.Restaurant
 import enum Entities.SortingOptionType
 
 // MARK: - IO Models
-struct RestaurantListSearchResultsViewModelInput {
+struct SearchResultsViewModelInput {
     var concurrentBackgroundQueue: SchedulerType
     var concurrentUserInitiatedQueue: SchedulerType
     var allRestaurants: Observable<[Restaurant]> = .never()
@@ -21,24 +21,24 @@ struct RestaurantListSearchResultsViewModelInput {
     var sortingOptionSelectedAtIndex: Observable<Int?> = .never()
 }
 
-struct RestaurantListSearchResultsViewModelOutput {
+struct SearchResultsViewModelOutput {
     let restaurants: Driver<[Restaurant]>
 }
 
-typealias RestaurantListSearchResultsViewModel = (RestaurantListSearchResultsViewModelInput) -> RestaurantListSearchResultsViewModelOutput
+typealias SearchResultsViewModel = (SearchResultsViewModelInput) -> SearchResultsViewModelOutput
 
 // MARK: - IO Mapping
-func restaurantListSearchResultsViewModel(
-    _ inputs: RestaurantListSearchResultsViewModelInput
-) -> RestaurantListSearchResultsViewModelOutput {
-    RestaurantListSearchResultsViewModelOutput(
+func searchResultsViewModel(
+    _ inputs: SearchResultsViewModelInput
+) -> SearchResultsViewModelOutput {
+    SearchResultsViewModelOutput(
         restaurants: getRestaurantsOutput(inputs)
     )
 }
 
 // MARK: - Restaurants Output
 private func getRestaurantsOutput(
-    _ inputs: RestaurantListSearchResultsViewModelInput
+    _ inputs: SearchResultsViewModelInput
 ) -> Driver<[Restaurant]> {
     let restaurants = Observable
         .merge(

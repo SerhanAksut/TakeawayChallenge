@@ -11,7 +11,7 @@ import RxSwift
 import func Helper.with
 import func Helper.hStack
 
-final class RestaurantListSearchResultsInfoItemView: UIView {
+final class SearchResultsInfoItemView: UIView {
     
     // MARK: - Properties
     private let imageView = with(UIImageView()) {
@@ -45,7 +45,7 @@ final class RestaurantListSearchResultsInfoItemView: UIView {
 }
 
 // MARK: - Rx + Populate
-extension RestaurantListSearchResultsInfoItemView {
+extension SearchResultsInfoItemView {
     var populate: Binder<(UIImage?, String)> {
         Binder(self) { target, data in
             let image = data.0

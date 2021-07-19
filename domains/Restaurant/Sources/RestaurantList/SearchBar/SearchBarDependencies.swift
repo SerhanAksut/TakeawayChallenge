@@ -9,8 +9,8 @@ import RxSwift
 
 import struct RestaurantReader.Restaurant
 
-struct RestaurantListSearchBarDependencies {
-    let viewModel: RestaurantListSearchBarViewModel
+struct SearchBarDependencies {
+    let viewModel: SearchBarViewModel
     let allRestaurantsEvent: Observable<[Restaurant]>
     let searchResultsObserver: AnyObserver<[Restaurant]>
 }

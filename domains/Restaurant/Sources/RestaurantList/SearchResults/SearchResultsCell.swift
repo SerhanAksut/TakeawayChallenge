@@ -14,7 +14,7 @@ import func Helper.hStack
 
 import struct RestaurantReader.Restaurant
 
-final class RestaurantListSearchResultsCell: UITableViewCell {
+final class SearchResultsCell: UITableViewCell {
     
     // MARK: - Properties
     private let ratingAverageLabel = makeLabel(
@@ -43,9 +43,9 @@ final class RestaurantListSearchResultsCell: UITableViewCell {
         restaurantNameLabel
     )
     
-    private let distanceView = RestaurantListSearchResultsInfoItemView()
-    private let deliveryCostView = RestaurantListSearchResultsInfoItemView()
-    private let minCostView = RestaurantListSearchResultsInfoItemView()
+    private let distanceView = SearchResultsInfoItemView()
+    private let deliveryCostView = SearchResultsInfoItemView()
+    private let minCostView = SearchResultsInfoItemView()
     
     private lazy var bottomHStackView = hStack(space: 10)(
         distanceView,
@@ -81,7 +81,7 @@ final class RestaurantListSearchResultsCell: UITableViewCell {
 }
 
 // MARK: - Rx + Populate
-extension RestaurantListSearchResultsCell {
+extension SearchResultsCell {
     var populate: Binder<Restaurant> {
         Binder(self) { target, restaurant in
             let sortingValues = restaurant.sortingValues

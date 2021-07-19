@@ -8,16 +8,16 @@
 import UIKit
 import RxSwift
 
-final class RestaurantListSearchBarViewController: UIViewController {
+final class SearchBarViewController: UIViewController {
     
     // MARK: - Properties
-    private let viewSource = RestaurantListSearchBarView()
+    private let viewSource = SearchBarView()
     
     private let bag = DisposeBag()
-    private let dependencies: RestaurantListSearchBarDependencies
+    private let dependencies: SearchBarDependencies
     
     // MARK: - Initialization
-    init(with dependencies: RestaurantListSearchBarDependencies) {
+    init(with dependencies: SearchBarDependencies) {
         self.dependencies = dependencies
         
         super.init(nibName: nil, bundle: nil)
@@ -40,7 +40,7 @@ final class RestaurantListSearchBarViewController: UIViewController {
 }
 
 // MARK: - Bind ViewModel Outputs
-private extension RestaurantListSearchBarViewController {
+private extension SearchBarViewController {
     func bindViewModelOutputs() {
         let outputs = dependencies.viewModel(inputs)
         
@@ -49,10 +49,10 @@ private extension RestaurantListSearchBarViewController {
         )
     }
     
-    var inputs: RestaurantListSearchBarViewModelInput {
+    var inputs: SearchBarViewModelInput {
         let concurrentUserInitiatedQueue = ConcurrentDispatchQueueScheduler(qos: .userInitiated)
         
-        return RestaurantListSearchBarViewModelInput(
+        return SearchBarViewModelInput(
             concurrentUserInitiatedQueue: concurrentUserInitiatedQueue,
             searchText: viewSource.searchBar.rx.text.orEmpty.asObservable(),
             allRestaurants: dependencies.allRestaurantsEvent
