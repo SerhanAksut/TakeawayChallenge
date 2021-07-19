@@ -11,7 +11,12 @@ let package = Package(
     products: [
         .library(
             name: "RxHelper",
-            targets: ["RxHelper"]),
+            targets: ["RxHelper"]
+        ),
+        .library(
+            name: "RxTestHelper",
+            targets: ["RxTestHelper"]
+        ),
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift", from: "6.2.0")
@@ -21,6 +26,13 @@ let package = Package(
             name: "RxHelper",
             dependencies: [
                 .product(name: "RxCocoa", package: "RxSwift")
+            ]
+        ),
+        .target(
+            name: "RxTestHelper",
+            dependencies: [
+                .product(name: "RxCocoa", package: "RxSwift"),
+                .product(name: "RxTest", package: "RxSwift")
             ]
         ),
     ]

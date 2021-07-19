@@ -23,6 +23,7 @@ let package = Package(
         .package(path: "RxHelper"),
         .package(path: "FileReader"),
         .package(path: "Entities"),
+        .package(path: "Coordinator"),
         .package(url: "https://github.com/ReactiveX/RxSwift", from: "6.2.0")
     ],
     targets: [
@@ -32,6 +33,7 @@ let package = Package(
                 "Helper",
                 "RxHelper",
                 "Entities",
+                "Coordinator",
                 .product(name: "RestaurantReader", package: "FileReader"),
                 .product(name: "RxCocoa", package: "RxSwift")
             ]
@@ -45,7 +47,11 @@ let package = Package(
         ),
         .testTarget(
             name: "RestaurantTests",
-            dependencies: ["RestaurantList"]
+            dependencies: [
+                "RestaurantList",
+                .product(name: "RxTest", package: "RxSwift"),
+                .product(name: "RxTestHelper", package: "RxHelper")
+            ]
         ),
     ]
 )

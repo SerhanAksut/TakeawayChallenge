@@ -10,8 +10,6 @@
 		19EF9B4226A2E4A8007A0BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF9B4126A2E4A8007A0BBA /* AppDelegate.swift */; };
 		19EF9B4B26A2E4A8007A0BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19EF9B4A26A2E4A8007A0BBA /* Assets.xcassets */; };
 		19EF9B4E26A2E4A8007A0BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EF9B4C26A2E4A8007A0BBA /* LaunchScreen.storyboard */; };
-		19EF9B5926A2E4A8007A0BBA /* TakeawayChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF9B5826A2E4A8007A0BBA /* TakeawayChallengeTests.swift */; };
-		19EF9B6426A2E4A9007A0BBA /* TakeawayChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF9B6326A2E4A9007A0BBA /* TakeawayChallengeUITests.swift */; };
 		19EF9B8226A41321007A0BBA /* RestaurantReader in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B8126A41321007A0BBA /* RestaurantReader */; };
 		19EF9B8426A41321007A0BBA /* Helper in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B8326A41321007A0BBA /* Helper */; };
 		19EF9B8626A4141C007A0BBA /* RestaurantList in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B8526A4141C007A0BBA /* RestaurantList */; };
@@ -21,24 +19,8 @@
 		19EF9B9B26A5C6EC007A0BBA /* RestaurantList.json in Resources */ = {isa = PBXBuildFile; fileRef = 19EF9B9A26A5C6EC007A0BBA /* RestaurantList.json */; };
 		19EF9B9D26A60682007A0BBA /* Entities in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B9C26A60682007A0BBA /* Entities */; };
 		19EF9B9F26A6132C007A0BBA /* SortingOptions in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B9E26A6132C007A0BBA /* SortingOptions */; };
+		19EF9BA326A63DC0007A0BBA /* RxTestHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9BA226A63DC0007A0BBA /* RxTestHelper */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		19EF9B5526A2E4A8007A0BBA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 19EF9B3626A2E4A8007A0BBA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19EF9B3D26A2E4A8007A0BBA;
-			remoteInfo = TakeawayChallenge;
-		};
-		19EF9B6026A2E4A9007A0BBA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 19EF9B3626A2E4A8007A0BBA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19EF9B3D26A2E4A8007A0BBA;
-			remoteInfo = TakeawayChallenge;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		19EF9B3E26A2E4A8007A0BBA /* TakeawayChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeawayChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,12 +28,6 @@
 		19EF9B4A26A2E4A8007A0BBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19EF9B4D26A2E4A8007A0BBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19EF9B4F26A2E4A8007A0BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19EF9B5426A2E4A8007A0BBA /* TakeawayChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeawayChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19EF9B5826A2E4A8007A0BBA /* TakeawayChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeawayChallengeTests.swift; sourceTree = "<group>"; };
-		19EF9B5A26A2E4A8007A0BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19EF9B5F26A2E4A9007A0BBA /* TakeawayChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeawayChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19EF9B6326A2E4A9007A0BBA /* TakeawayChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeawayChallengeUITests.swift; sourceTree = "<group>"; };
-		19EF9B6526A2E4A9007A0BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19EF9B9626A5BD6F007A0BBA /* RestaurantCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCoordinator.swift; sourceTree = "<group>"; };
 		19EF9B9A26A5C6EC007A0BBA /* RestaurantList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = RestaurantList.json; path = ../../../../../../Desktop/RestaurantList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,21 +43,8 @@
 				19EF9B8226A41321007A0BBA /* RestaurantReader in Frameworks */,
 				19EF9B9426A5BC8B007A0BBA /* Coordinator in Frameworks */,
 				19EF9B9D26A60682007A0BBA /* Entities in Frameworks */,
+				19EF9BA326A63DC0007A0BBA /* RxTestHelper in Frameworks */,
 				19EF9B9F26A6132C007A0BBA /* SortingOptions in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19EF9B5126A2E4A8007A0BBA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19EF9B5C26A2E4A9007A0BBA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,8 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				19EF9B4026A2E4A8007A0BBA /* TakeawayChallenge */,
-				19EF9B5726A2E4A8007A0BBA /* TakeawayChallengeTests */,
-				19EF9B6226A2E4A9007A0BBA /* TakeawayChallengeUITests */,
 				19EF9B3F26A2E4A8007A0BBA /* Products */,
 				19EF9B7126A2E776007A0BBA /* Frameworks */,
 			);
@@ -103,8 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				19EF9B3E26A2E4A8007A0BBA /* TakeawayChallenge.app */,
-				19EF9B5426A2E4A8007A0BBA /* TakeawayChallengeTests.xctest */,
-				19EF9B5F26A2E4A9007A0BBA /* TakeawayChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,24 +79,6 @@
 				19EF9B9826A5C695007A0BBA /* LocalFiles */,
 			);
 			path = TakeawayChallenge;
-			sourceTree = "<group>";
-		};
-		19EF9B5726A2E4A8007A0BBA /* TakeawayChallengeTests */ = {
-			isa = PBXGroup;
-			children = (
-				19EF9B5826A2E4A8007A0BBA /* TakeawayChallengeTests.swift */,
-				19EF9B5A26A2E4A8007A0BBA /* Info.plist */,
-			);
-			path = TakeawayChallengeTests;
-			sourceTree = "<group>";
-		};
-		19EF9B6226A2E4A9007A0BBA /* TakeawayChallengeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				19EF9B6326A2E4A9007A0BBA /* TakeawayChallengeUITests.swift */,
-				19EF9B6526A2E4A9007A0BBA /* Info.plist */,
-			);
-			path = TakeawayChallengeUITests;
 			sourceTree = "<group>";
 		};
 		19EF9B7126A2E776007A0BBA /* Frameworks */ = {
@@ -195,46 +136,11 @@
 				19EF9B9326A5BC8B007A0BBA /* Coordinator */,
 				19EF9B9C26A60682007A0BBA /* Entities */,
 				19EF9B9E26A6132C007A0BBA /* SortingOptions */,
+				19EF9BA226A63DC0007A0BBA /* RxTestHelper */,
 			);
 			productName = TakeawayChallenge;
 			productReference = 19EF9B3E26A2E4A8007A0BBA /* TakeawayChallenge.app */;
 			productType = "com.apple.product-type.application";
-		};
-		19EF9B5326A2E4A8007A0BBA /* TakeawayChallengeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 19EF9B6B26A2E4A9007A0BBA /* Build configuration list for PBXNativeTarget "TakeawayChallengeTests" */;
-			buildPhases = (
-				19EF9B5026A2E4A8007A0BBA /* Sources */,
-				19EF9B5126A2E4A8007A0BBA /* Frameworks */,
-				19EF9B5226A2E4A8007A0BBA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				19EF9B5626A2E4A8007A0BBA /* PBXTargetDependency */,
-			);
-			name = TakeawayChallengeTests;
-			productName = TakeawayChallengeTests;
-			productReference = 19EF9B5426A2E4A8007A0BBA /* TakeawayChallengeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		19EF9B5E26A2E4A9007A0BBA /* TakeawayChallengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 19EF9B6E26A2E4A9007A0BBA /* Build configuration list for PBXNativeTarget "TakeawayChallengeUITests" */;
-			buildPhases = (
-				19EF9B5B26A2E4A9007A0BBA /* Sources */,
-				19EF9B5C26A2E4A9007A0BBA /* Frameworks */,
-				19EF9B5D26A2E4A9007A0BBA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				19EF9B6126A2E4A9007A0BBA /* PBXTargetDependency */,
-			);
-			name = TakeawayChallengeUITests;
-			productName = TakeawayChallengeUITests;
-			productReference = 19EF9B5F26A2E4A9007A0BBA /* TakeawayChallengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -247,14 +153,6 @@
 				TargetAttributes = {
 					19EF9B3D26A2E4A8007A0BBA = {
 						CreatedOnToolsVersion = 12.5.1;
-					};
-					19EF9B5326A2E4A8007A0BBA = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = 19EF9B3D26A2E4A8007A0BBA;
-					};
-					19EF9B5E26A2E4A9007A0BBA = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = 19EF9B3D26A2E4A8007A0BBA;
 					};
 				};
 			};
@@ -272,8 +170,6 @@
 			projectRoot = "";
 			targets = (
 				19EF9B3D26A2E4A8007A0BBA /* TakeawayChallenge */,
-				19EF9B5326A2E4A8007A0BBA /* TakeawayChallengeTests */,
-				19EF9B5E26A2E4A9007A0BBA /* TakeawayChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -289,20 +185,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19EF9B5226A2E4A8007A0BBA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19EF9B5D26A2E4A9007A0BBA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -315,36 +197,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19EF9B5026A2E4A8007A0BBA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19EF9B5926A2E4A8007A0BBA /* TakeawayChallengeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19EF9B5B26A2E4A9007A0BBA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19EF9B6426A2E4A9007A0BBA /* TakeawayChallengeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		19EF9B5626A2E4A8007A0BBA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 19EF9B3D26A2E4A8007A0BBA /* TakeawayChallenge */;
-			targetProxy = 19EF9B5526A2E4A8007A0BBA /* PBXContainerItemProxy */;
-		};
-		19EF9B6126A2E4A9007A0BBA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 19EF9B3D26A2E4A8007A0BBA /* TakeawayChallenge */;
-			targetProxy = 19EF9B6026A2E4A9007A0BBA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		19EF9B4C26A2E4A8007A0BBA /* LaunchScreen.storyboard */ = {
@@ -480,6 +333,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = TakeawayChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,6 +353,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = TakeawayChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -509,86 +364,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		19EF9B6C26A2E4A9007A0BBA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TakeawayChallengeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = serhanaksut.com.TakeawayChallengeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TakeawayChallenge.app/TakeawayChallenge";
-			};
-			name = Debug;
-		};
-		19EF9B6D26A2E4A9007A0BBA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TakeawayChallengeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = serhanaksut.com.TakeawayChallengeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TakeawayChallenge.app/TakeawayChallenge";
-			};
-			name = Release;
-		};
-		19EF9B6F26A2E4A9007A0BBA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TakeawayChallengeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = serhanaksut.com.TakeawayChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TakeawayChallenge;
-			};
-			name = Debug;
-		};
-		19EF9B7026A2E4A9007A0BBA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TakeawayChallengeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = serhanaksut.com.TakeawayChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TakeawayChallenge;
 			};
 			name = Release;
 		};
@@ -609,24 +384,6 @@
 			buildConfigurations = (
 				19EF9B6926A2E4A9007A0BBA /* Debug */,
 				19EF9B6A26A2E4A9007A0BBA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		19EF9B6B26A2E4A9007A0BBA /* Build configuration list for PBXNativeTarget "TakeawayChallengeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				19EF9B6C26A2E4A9007A0BBA /* Debug */,
-				19EF9B6D26A2E4A9007A0BBA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		19EF9B6E26A2E4A9007A0BBA /* Build configuration list for PBXNativeTarget "TakeawayChallengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				19EF9B6F26A2E4A9007A0BBA /* Debug */,
-				19EF9B7026A2E4A9007A0BBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -661,6 +418,10 @@
 		19EF9B9E26A6132C007A0BBA /* SortingOptions */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SortingOptions;
+		};
+		19EF9BA226A63DC0007A0BBA /* RxTestHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RxTestHelper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
