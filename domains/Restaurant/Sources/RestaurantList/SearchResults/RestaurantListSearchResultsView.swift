@@ -14,7 +14,8 @@ final class RestaurantListSearchResultsView: UIView {
     // MARK: - Properties
     let tableView = with(UITableView(frame: .zero)) {
         $0.backgroundColor = .white
-        $0.estimatedRowHeight = 100
+        $0.estimatedRowHeight = 80
+        $0.keyboardDismissMode = .interactive
         $0.register(
             RestaurantListSearchResultsCell.self,
             forCellReuseIdentifier: RestaurantListSearchResultsCell.viewIdentifier

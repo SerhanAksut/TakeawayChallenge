@@ -16,4 +16,24 @@ public enum RestaurantStatus: String, Decodable, Equatable {
         let value = try container.decode(String.self)
         self = RestaurantStatus(rawValue: value) ?? .unknown
     }
+    
+    public var text: String? {
+        switch self {
+        case .open:
+            return Constants.open
+        case .closed:
+            return Constants.closed
+        case .orderAhead:
+            return Constants.orderAhead
+        case .unknown:
+            return nil
+        }
+    }
+}
+
+// MARK: - Constants
+private enum Constants {
+    static let open = "Open"
+    static let closed = "Closed"
+    static let orderAhead = "Order Ahead"
 }
