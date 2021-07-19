@@ -111,7 +111,7 @@ private func makeLabel(
     textAlignment: NSTextAlignment,
     font: UIFont,
     textColor: UIColor,
-    backgroundColor: UIColor = .white,
+    backgroundColor: UIColor = .clear,
     radius: CGFloat = .zero,
     huggingPriority: UILayoutPriority = .defaultLow
 ) -> UILabel {
