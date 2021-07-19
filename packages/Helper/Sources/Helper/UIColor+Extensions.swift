@@ -33,4 +33,5 @@ public extension UIColor {
 // MARK: - App Colors
 public extension UIColor {
     static let appOrangeColor = UIColor(displayP3Hex: 0xFF8002)
+    static let appLightGrey = UIColor(displayP3Hex: 0xA3A3A3)
 }
