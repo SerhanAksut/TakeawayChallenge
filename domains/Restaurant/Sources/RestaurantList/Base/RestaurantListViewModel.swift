@@ -56,6 +56,7 @@ private func getRestaurantList(
 ) -> (Driver<[Restaurant]>, Driver<Error>) {
     inputs.viewDidLoad
         .observe(on: inputs.concurrentBackgroundQueue)
+        .take(1)
         .request(indicator, call: inputs.restaurantReader.restaurantList)
 }
 
