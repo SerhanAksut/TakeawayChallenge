@@ -16,6 +16,7 @@ let package = Package(
     dependencies: [
         .package(path: "Helper"),
         .package(path: "RxHelper"),
+        .package(path: "FileReader"),
         .package(url: "https://github.com/ReactiveX/RxSwift", from: "6.2.0")
     ],
     targets: [
@@ -24,6 +25,7 @@ let package = Package(
             dependencies: [
                 "Helper",
                 "RxHelper",
+                .product(name: "RestaurantReader", package: "FileReader"),
                 .product(name: "RxCocoa", package: "RxSwift")
             ]
         ),
