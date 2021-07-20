@@ -19,19 +19,6 @@ public enum RestaurantStatus: String, Decodable, Equatable {
         self = RestaurantStatus(rawValue: value) ?? .unknown
     }
     
-    var rank: UInt {
-        switch self {
-        case .open:
-            return 3
-        case .orderAhead:
-            return 2
-        case .closed:
-            return 1
-        case .unknown:
-            return 0
-        }
-    }
-    
     public var text: String? {
         switch self {
         case .open:

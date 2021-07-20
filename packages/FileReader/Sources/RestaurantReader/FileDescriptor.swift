@@ -7,8 +7,6 @@
 
 import Foundation
 
-final class BundleClass {}
-
 let bundle = Bundle.main
 
 enum File: String {

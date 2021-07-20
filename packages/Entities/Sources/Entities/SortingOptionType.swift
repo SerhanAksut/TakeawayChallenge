@@ -14,6 +14,4 @@ public enum SortingOptionType: String, CaseIterable, Equatable {
     case averageProductPrice = "Average product price"
     case deliveryCosts = "Delivery costs"
     case minCost = "Minimum cost"
-    
-//    public func sort() -> []
 }
