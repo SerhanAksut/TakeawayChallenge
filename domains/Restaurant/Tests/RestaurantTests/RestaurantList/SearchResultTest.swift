@@ -1,0 +1,80 @@
+//
+//  File.swift
+//  
+//
+//  Created by Serhan Aksut on 20.07.2021.
+//
+
+import XCTest
+import RxTest
+
+@testable import RestaurantList
+@testable import Helper
+@testable import RxTestHelper
+@testable import RestaurantReader
+
+class SearchResultTest: XCTestCase {
+    
+    var viewModel: SearchResultsViewModel!
+    var scheduler: TestScheduler!
+    var inputs: SearchResultsViewModelInput!
+    
+    override func setUp() {
+        super.setUp()
+        
+        viewModel = searchResultsViewModel(_:)
+        scheduler = TestScheduler(
+            initialClock: 0,
+            resolution: 0.1,
+            simulateProcessingDelay: true
+        )
+        inputs = SearchResultsViewModelInput(
+            concurrentBackgroundQueue: scheduler,
+            concurrentUserInitiatedQueue: scheduler
+        )
+    }
+    
+    override func tearDown() {
+        viewModel = nil
+        scheduler = nil
+        inputs = nil
+    }
+    
+    func test__restaurants_when_allRestaurants_and_searchResults_input_handled() {
+        inputs = with(inputs!) {
+            $0.allRestaurants = scheduler.cold(.next(5, .mock))
+            $0.searchResults = scheduler.cold(.next(10, .singleMock))
+        }
+        
+        let outputs = viewModel(inputs)
+        let restaurants = scheduler.record(source: outputs.restaurants)
+        
+        scheduler.start()
+        
+        XCTAssertEqual(restaurants.events, [
+            .next(5, .mock),
+            .next(10, .mock)
+        ])
+    }
+    
+    func test__restaurants_when_sortingOptionSelectedAtIndex_input_handled() {
+        inputs = with(inputs!) {
+            $0.allRestaurants = scheduler.cold(.next(5, .mock))
+            $0.sortingOptionSelectedAtIndex = scheduler.cold(.next(10, 0))
+        }
+        
+        let outputs = viewModel(inputs)
+        let restaurants = scheduler.record(source: outputs.restaurants)
+        
+        scheduler.start()
+        
+        let expectedSortingOptionResult = [Restaurant].mock.sorted {
+            $0.sortingValues.bestMatch > $1.sortingValues.bestMatch
+        }
+        
+        XCTAssertEqual(restaurants.events, [
+            .next(5, .mock),
+            .next(10, expectedSortingOptionResult)
+        ])
+    }
+}

@@ -57,5 +57,24 @@ extension Array where Element == Restaurant {
             )
         ]
     }
+    
+    static var singleMock: Self {
+        [
+            Restaurant(
+                id: "1",
+                name: "Tandoori",
+                status: .open,
+                sortingValues: RestaurantSortingValues(
+                    bestMatch: 1,
+                    newest: 1,
+                    ratingAverage: 1,
+                    distance: 1,
+                    popularity: 1,
+                    averageProductPrice: 1,
+                    deliveryCosts: 1,
+                    minCost: 1
+                )
+            )
+        ]
+    }
 }
-

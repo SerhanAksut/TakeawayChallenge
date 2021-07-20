@@ -61,6 +61,7 @@ class SearchBarTest: XCTestCase {
         let expectedResult2 = restaurants.filter {
             $0.name.lowercased().contains("Ta")
         }
+        
         XCTAssertEqual(searchResults.events, [
             .next(5, expectedResult1),
             .next(10, expectedResult2),
