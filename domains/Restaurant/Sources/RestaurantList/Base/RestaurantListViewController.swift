@@ -27,6 +27,15 @@ final class RestaurantListViewController: UIViewController {
         return controller
     }()
     
+    private lazy var selectedSortingOptionController: SelectedSortingOptionViewController = {
+        let dependencies = SelectedSortingOptionDependencies(
+            viewModel: selectedSortingOptionViewModel(_:),
+            sortingOptionSelectedAtIndexEvent: sortingOptionSelectedAtIndexEvent
+        )
+        let controller = SelectedSortingOptionViewController(with: dependencies)
+        return controller
+    }()
+    
     private lazy var searchResultsController: SearchResultsViewController = {
         let dependencies = SearchResultsDependencies(
             viewModel: searchResultsViewModel(_:),
@@ -108,6 +117,7 @@ private extension RestaurantListViewController {
     func addChildren() {
         [
             searchBarController,
+            selectedSortingOptionController,
             searchResultsController
         ]
         .forEach {

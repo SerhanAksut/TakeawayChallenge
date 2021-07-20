@@ -7,7 +7,6 @@
 
 import XCTest
 import RxTest
-import RxCocoa
 
 @testable import RestaurantList
 @testable import Helper

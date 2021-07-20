@@ -7,7 +7,6 @@
 
 import XCTest
 import RxTest
-import RxCocoa
 
 @testable import RestaurantList
 @testable import Helper
@@ -61,29 +60,27 @@ class RestaurantListTest: XCTestCase {
     }
     
     func test_isLoading_when_restaurantList_requested() {
-        SharingScheduler.mock(scheduler: scheduler) {
-            let reader = RestaurantReader(
-                restaurantList: {
-                    self.scheduler.single(10, .mock)
-                }
-            )
-            inputs = with(inputs!) {
-                $0.restaurantReader = reader
-                $0.viewDidLoad = scheduler.cold(.next(5, ()))
+        let reader = RestaurantReader(
+            restaurantList: {
+                self.scheduler.single(10, .mock)
             }
-            
-            let outputs = viewModel(inputs)
-            let isLoading = scheduler.record(source: outputs.isLoading)
-            _ = scheduler.record(source: outputs.datasource)
-            
-            scheduler.start()
-            
-            XCTAssertEqual(isLoading.events, [
-                .next(0, false),
-                .next(5, true),
-                .next(15, false)
-            ])
+        )
+        inputs = with(inputs!) {
+            $0.restaurantReader = reader
+            $0.viewDidLoad = scheduler.cold(.next(5, ()))
         }
+        
+        let outputs = viewModel(inputs)
+        let isLoading = scheduler.record(source: outputs.isLoading)
+        _ = scheduler.record(source: outputs.datasource)
+        
+        scheduler.start()
+        
+        XCTAssertEqual(isLoading.events, [
+            .next(0, false),
+            .next(5, true),
+            .next(15, false)
+        ])
     }
     
     func test__error_when_restaurantList_request_failed_with_error() {
