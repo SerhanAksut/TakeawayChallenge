@@ -105,7 +105,8 @@ class RestaurantListTest: XCTestCase {
         
         let expectedResult = ErrorObject(message: "An error occured. Please try again.")
         XCTAssertEqual(error.events, [
-            .next(15, expectedResult)
+            .next(15, expectedResult),
+            .completed(15)
         ])
     }
     

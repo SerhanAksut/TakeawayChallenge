@@ -50,16 +50,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "RestaurantTests"
-               BuildableName = "RestaurantTests"
-               BlueprintName = "RestaurantTests"
-               ReferencedContainer = "container:domains/Restaurant">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "199F291D26A6A22A001D8EE4"
                BuildableName = "TakeawayChallengeTests.xctest"
                BlueprintName = "TakeawayChallengeTests"

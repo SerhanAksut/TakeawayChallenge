@@ -42,7 +42,7 @@ extension Array where Element == Restaurant {
             ),
             Restaurant(
                 id: "3",
-                name: "Tandsii",
+                name: "Tanfyii",
                 status: .closed,
                 sortingValues: RestaurantSortingValues(
                     bestMatch: 3,

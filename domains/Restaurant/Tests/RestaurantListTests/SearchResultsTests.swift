@@ -7,11 +7,13 @@
 
 import XCTest
 import RxTest
+import RxCocoa
 
 @testable import RestaurantList
 @testable import Helper
 @testable import RxTestHelper
 @testable import RestaurantReader
+@testable import Entities
 
 class SearchResultTest: XCTestCase {
     
@@ -26,7 +28,7 @@ class SearchResultTest: XCTestCase {
         scheduler = TestScheduler(
             initialClock: 0,
             resolution: 0.1,
-            simulateProcessingDelay: true
+            simulateProcessingDelay: false
         )
         inputs = SearchResultsViewModelInput(
             concurrentBackgroundQueue: scheduler,
@@ -53,14 +55,14 @@ class SearchResultTest: XCTestCase {
         
         XCTAssertEqual(restaurants.events, [
             .next(5, .mock),
-            .next(10, .mock)
+            .next(10, .singleMock)
         ])
     }
     
     func test__restaurants_when_sortingOptionSelectedAtIndex_input_handled() {
         inputs = with(inputs!) {
             $0.allRestaurants = scheduler.cold(.next(5, .mock))
-            $0.sortingOptionSelectedAtIndex = scheduler.cold(.next(10, 0))
+            $0.sortingOptionSelectedAtIndex = scheduler.cold(.next(10, 2))
         }
         
         let outputs = viewModel(inputs)
@@ -68,13 +70,8 @@ class SearchResultTest: XCTestCase {
         
         scheduler.start()
         
-        let expectedSortingOptionResult = [Restaurant].mock.sorted {
-            $0.sortingValues.bestMatch > $1.sortingValues.bestMatch
-        }
-        
         XCTAssertEqual(restaurants.events, [
-            .next(5, .mock),
-            .next(10, expectedSortingOptionResult)
+            .next(5, .mock)
         ])
     }
 }

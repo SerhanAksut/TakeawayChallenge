@@ -46,9 +46,19 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "RestaurantTests",
+            name: "RestaurantListTests",
             dependencies: [
                 "RestaurantList",
+                .product(name: "RxTest", package: "RxSwift"),
+                .product(name: "RxTestHelper", package: "RxHelper")
+            ]
+        ),
+        .testTarget(
+            name: "SortingOptionsTests",
+            dependencies: [
+                "SortingOptions",
+                "Helper",
+                "RxHelper",
                 .product(name: "RxTest", package: "RxSwift"),
                 .product(name: "RxTestHelper", package: "RxHelper")
             ]

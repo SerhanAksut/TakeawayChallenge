@@ -43,9 +43,8 @@ class SearchBarTest: XCTestCase {
             $0.allRestaurants = scheduler.cold(.next(0, restaurants))
             $0.searchText = scheduler.hot(
                 .next(5, "T"),
-                .next(10, "Ta"),
-                .next(15, ""),
-                .next(20, "Not found"),
+                .next(10, "Tando"),
+                .next(15, "Not found"),
                 .next(25, "Not Found")
             )
         }
@@ -55,18 +54,10 @@ class SearchBarTest: XCTestCase {
         
         scheduler.start()
         
-        let expectedResult1 = restaurants.filter {
-            $0.name.lowercased().contains("T")
-        }
-        let expectedResult2 = restaurants.filter {
-            $0.name.lowercased().contains("Ta")
-        }
-        
         XCTAssertEqual(searchResults.events, [
-            .next(5, expectedResult1),
-            .next(10, expectedResult2),
-            .next(15, restaurants),
-            .next(20, [])
+            .next(5, .mock),
+            .next(10, [[Restaurant].mock[0]]),
+            .next(15, [])
         ])
     }
 }
