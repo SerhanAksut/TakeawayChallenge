@@ -13,10 +13,10 @@
 
 ## Screenshots
 <div align="left">
-    <img src="/Screenshots/1.png" width="250px"</img>
-    <img src="/Screenshots/2.png" width="250px"</img>
-    <img src="/Screenshots/3.png" width="250px"</img>
-    <img src="/Screenshots/4.png" width="250px"</img> 
+    <img src="/Screenshots/1.png" width="200px"</img>
+    <img src="/Screenshots/2.png" width="200px"</img>
+    <img src="/Screenshots/3.png" width="200px"</img>
+    <img src="/Screenshots/4.png" width="200px"</img> 
 </div>
 
 ## General info
