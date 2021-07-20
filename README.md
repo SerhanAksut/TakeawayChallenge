@@ -12,7 +12,7 @@
 * [Setup](#setup)
 
 ## Screenshots
-<div align="center">
+<div align="left">
     <img src="/Screenshots/1.png" width="400px"</img>
     <img src="/Screenshots/2.png" width="400px"</img>
     <img src="/Screenshots/3.png" width="400px"</img>
