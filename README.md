@@ -12,7 +12,12 @@
 * [Setup](#setup)
 
 ## Screenshots
-![Screenshot](1.png) ![Screenshot](2.png) ![Screenshot](3.png) ![Screenshot](4.png)
+<div align="center">
+    <img src="/Screenshots/1.png" width="400px"</img>
+    <img src="/Screenshots/2.png" width="400px"</img>
+    <img src="/Screenshots/3.png" width="400px"</img>
+    <img src="/Screenshots/4.png" width="400px"</img> 
+</div>
 
 ## General info
 This is an iOS Project that developed using `UIKit` framework for Takeaway iOS case study. It is a 2 pages application which are restaurant list and sorting options page for the listed restaurants in `UITableView`. Also, You can filter in restaurant list searching by restaurant names using `UISearchBar`. The first one is that RestaurantList page contains in total 4 child controllers that are called `Base`, `SearchBar`, `SelectedSortingOption` and `SearchResults`. The second one is that SortingOption page contains a `UITableView` to display filtering options.
