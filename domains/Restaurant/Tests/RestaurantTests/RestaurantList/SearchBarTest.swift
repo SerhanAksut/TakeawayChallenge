@@ -12,7 +12,6 @@ import RxTest
 @testable import Helper
 @testable import RxTestHelper
 @testable import RestaurantReader
-@testable import FileReader
 
 class SearchBarTest: XCTestCase {
     
@@ -68,22 +67,5 @@ class SearchBarTest: XCTestCase {
             .next(15, restaurants),
             .next(20, [])
         ])
-    }
-}
-
-// MARK: - Mock Data
-extension Array where Element == Restaurant {
-    static var mock: Self {
-        let result = readFile(
-            bundle: Bundle.main,
-            type: RestaurantListResponse.self,
-            file: "RestaurantList"
-        )
-        switch result {
-        case .success(let response):
-            return response.restaurants
-        case .failure:
-            return []
-        }
     }
 }

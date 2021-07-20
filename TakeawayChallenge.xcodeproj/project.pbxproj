@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		199F291926A6A0BE001D8EE4 /* RestaurantList.json in Resources */ = {isa = PBXBuildFile; fileRef = 199F291826A6A0BE001D8EE4 /* RestaurantList.json */; };
+		199F292126A6A22A001D8EE4 /* TakeawayChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199F292026A6A22A001D8EE4 /* TakeawayChallengeTests.swift */; platformFilter = ios; };
+		199F292926A6A232001D8EE4 /* RxTestHelper in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 199F292826A6A232001D8EE4 /* RxTestHelper */; };
+		199F292D26A6A3AA001D8EE4 /* RestaurantList.json in Resources */ = {isa = PBXBuildFile; fileRef = 199F291826A6A0BE001D8EE4 /* RestaurantList.json */; platformFilter = ios; };
 		19EF9B4226A2E4A8007A0BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF9B4126A2E4A8007A0BBA /* AppDelegate.swift */; };
 		19EF9B4B26A2E4A8007A0BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19EF9B4A26A2E4A8007A0BBA /* Assets.xcassets */; };
 		19EF9B4E26A2E4A8007A0BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EF9B4C26A2E4A8007A0BBA /* LaunchScreen.storyboard */; };
@@ -16,23 +20,42 @@
 		19EF9B8826A4141C007A0BBA /* RxHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B8726A4141C007A0BBA /* RxHelper */; };
 		19EF9B9426A5BC8B007A0BBA /* Coordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B9326A5BC8B007A0BBA /* Coordinator */; };
 		19EF9B9726A5BD6F007A0BBA /* RestaurantCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF9B9626A5BD6F007A0BBA /* RestaurantCoordinator.swift */; };
-		19EF9B9B26A5C6EC007A0BBA /* RestaurantList.json in Resources */ = {isa = PBXBuildFile; fileRef = 19EF9B9A26A5C6EC007A0BBA /* RestaurantList.json */; };
 		19EF9B9D26A60682007A0BBA /* Entities in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B9C26A60682007A0BBA /* Entities */; };
 		19EF9B9F26A6132C007A0BBA /* SortingOptions in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9B9E26A6132C007A0BBA /* SortingOptions */; };
-		19EF9BA326A63DC0007A0BBA /* RxTestHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 19EF9BA226A63DC0007A0BBA /* RxTestHelper */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		199F292326A6A22A001D8EE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19EF9B3626A2E4A8007A0BBA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19EF9B3D26A2E4A8007A0BBA;
+			remoteInfo = TakeawayChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		199F291826A6A0BE001D8EE4 /* RestaurantList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RestaurantList.json; sourceTree = "<group>"; };
+		199F291E26A6A22A001D8EE4 /* TakeawayChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeawayChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		199F292026A6A22A001D8EE4 /* TakeawayChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeawayChallengeTests.swift; sourceTree = "<group>"; };
+		199F292226A6A22A001D8EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19EF9B3E26A2E4A8007A0BBA /* TakeawayChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeawayChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EF9B4126A2E4A8007A0BBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19EF9B4A26A2E4A8007A0BBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19EF9B4D26A2E4A8007A0BBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19EF9B4F26A2E4A8007A0BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19EF9B9626A5BD6F007A0BBA /* RestaurantCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCoordinator.swift; sourceTree = "<group>"; };
-		19EF9B9A26A5C6EC007A0BBA /* RestaurantList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = RestaurantList.json; path = ../../../../../../Desktop/RestaurantList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		199F291B26A6A22A001D8EE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				199F292926A6A232001D8EE4 /* RxTestHelper in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19EF9B3B26A2E4A8007A0BBA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,7 +66,6 @@
 				19EF9B8226A41321007A0BBA /* RestaurantReader in Frameworks */,
 				19EF9B9426A5BC8B007A0BBA /* Coordinator in Frameworks */,
 				19EF9B9D26A60682007A0BBA /* Entities in Frameworks */,
-				19EF9BA326A63DC0007A0BBA /* RxTestHelper in Frameworks */,
 				19EF9B9F26A6132C007A0BBA /* SortingOptions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,10 +73,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		199F291526A6A005001D8EE4 /* LocalFiles */ = {
+			isa = PBXGroup;
+			children = (
+				199F291826A6A0BE001D8EE4 /* RestaurantList.json */,
+			);
+			path = LocalFiles;
+			sourceTree = "<group>";
+		};
+		199F291F26A6A22A001D8EE4 /* TakeawayChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				199F292026A6A22A001D8EE4 /* TakeawayChallengeTests.swift */,
+				199F292226A6A22A001D8EE4 /* Info.plist */,
+			);
+			path = TakeawayChallengeTests;
+			sourceTree = "<group>";
+		};
 		19EF9B3526A2E4A8007A0BBA = {
 			isa = PBXGroup;
 			children = (
 				19EF9B4026A2E4A8007A0BBA /* TakeawayChallenge */,
+				199F291F26A6A22A001D8EE4 /* TakeawayChallengeTests */,
 				19EF9B3F26A2E4A8007A0BBA /* Products */,
 				19EF9B7126A2E776007A0BBA /* Frameworks */,
 			);
@@ -64,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				19EF9B3E26A2E4A8007A0BBA /* TakeawayChallenge.app */,
+				199F291E26A6A22A001D8EE4 /* TakeawayChallengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,7 +117,7 @@
 				19EF9B9526A5BD51007A0BBA /* Coordinators */,
 				19EF9B4F26A2E4A8007A0BBA /* Info.plist */,
 				19EF9B4C26A2E4A8007A0BBA /* LaunchScreen.storyboard */,
-				19EF9B9826A5C695007A0BBA /* LocalFiles */,
+				199F291526A6A005001D8EE4 /* LocalFiles */,
 			);
 			path = TakeawayChallenge;
 			sourceTree = "<group>";
@@ -96,25 +137,30 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
-		19EF9B9826A5C695007A0BBA /* LocalFiles */ = {
-			isa = PBXGroup;
-			children = (
-				19EF9B9926A5C6B8007A0BBA /* Restaurant */,
-			);
-			path = LocalFiles;
-			sourceTree = "<group>";
-		};
-		19EF9B9926A5C6B8007A0BBA /* Restaurant */ = {
-			isa = PBXGroup;
-			children = (
-				19EF9B9A26A5C6EC007A0BBA /* RestaurantList.json */,
-			);
-			path = Restaurant;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		199F291D26A6A22A001D8EE4 /* TakeawayChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 199F292526A6A22A001D8EE4 /* Build configuration list for PBXNativeTarget "TakeawayChallengeTests" */;
+			buildPhases = (
+				199F291A26A6A22A001D8EE4 /* Sources */,
+				199F291B26A6A22A001D8EE4 /* Frameworks */,
+				199F291C26A6A22A001D8EE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				199F292426A6A22A001D8EE4 /* PBXTargetDependency */,
+			);
+			name = TakeawayChallengeTests;
+			packageProductDependencies = (
+				199F292826A6A232001D8EE4 /* RxTestHelper */,
+			);
+			productName = TakeawayChallengeTests;
+			productReference = 199F291E26A6A22A001D8EE4 /* TakeawayChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		19EF9B3D26A2E4A8007A0BBA /* TakeawayChallenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19EF9B6826A2E4A9007A0BBA /* Build configuration list for PBXNativeTarget "TakeawayChallenge" */;
@@ -136,7 +182,6 @@
 				19EF9B9326A5BC8B007A0BBA /* Coordinator */,
 				19EF9B9C26A60682007A0BBA /* Entities */,
 				19EF9B9E26A6132C007A0BBA /* SortingOptions */,
-				19EF9BA226A63DC0007A0BBA /* RxTestHelper */,
 			);
 			productName = TakeawayChallenge;
 			productReference = 19EF9B3E26A2E4A8007A0BBA /* TakeawayChallenge.app */;
@@ -151,6 +196,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					199F291D26A6A22A001D8EE4 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 19EF9B3D26A2E4A8007A0BBA;
+					};
 					19EF9B3D26A2E4A8007A0BBA = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -170,16 +219,25 @@
 			projectRoot = "";
 			targets = (
 				19EF9B3D26A2E4A8007A0BBA /* TakeawayChallenge */,
+				199F291D26A6A22A001D8EE4 /* TakeawayChallengeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		199F291C26A6A22A001D8EE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				199F292D26A6A3AA001D8EE4 /* RestaurantList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19EF9B3C26A2E4A8007A0BBA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19EF9B9B26A5C6EC007A0BBA /* RestaurantList.json in Resources */,
+				199F291926A6A0BE001D8EE4 /* RestaurantList.json in Resources */,
 				19EF9B4E26A2E4A8007A0BBA /* LaunchScreen.storyboard in Resources */,
 				19EF9B4B26A2E4A8007A0BBA /* Assets.xcassets in Resources */,
 			);
@@ -188,6 +246,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		199F291A26A6A22A001D8EE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				199F292126A6A22A001D8EE4 /* TakeawayChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19EF9B3A26A2E4A8007A0BBA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,6 +264,15 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		199F292426A6A22A001D8EE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 19EF9B3D26A2E4A8007A0BBA /* TakeawayChallenge */;
+			targetProxy = 199F292326A6A22A001D8EE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		19EF9B4C26A2E4A8007A0BBA /* LaunchScreen.storyboard */ = {
@@ -211,6 +286,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		199F292626A6A22A001D8EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TakeawayChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = serhanaksut.com.TakeawayChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TakeawayChallenge.app/TakeawayChallenge";
+			};
+			name = Debug;
+		};
+		199F292726A6A22A001D8EE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TakeawayChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = serhanaksut.com.TakeawayChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TakeawayChallenge.app/TakeawayChallenge";
+			};
+			name = Release;
+		};
 		19EF9B6626A2E4A9007A0BBA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -336,10 +449,7 @@
 				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = TakeawayChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = serhanaksut.com.TakeawayChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -356,10 +466,7 @@
 				ENABLE_TESTING_SEARCH_PATHS = YES;
 				INFOPLIST_FILE = TakeawayChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = serhanaksut.com.TakeawayChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -370,6 +477,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		199F292526A6A22A001D8EE4 /* Build configuration list for PBXNativeTarget "TakeawayChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199F292626A6A22A001D8EE4 /* Debug */,
+				199F292726A6A22A001D8EE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		19EF9B3926A2E4A8007A0BBA /* Build configuration list for PBXProject "TakeawayChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -391,6 +507,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		199F292826A6A232001D8EE4 /* RxTestHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RxTestHelper;
+		};
 		19EF9B8126A41321007A0BBA /* RestaurantReader */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RestaurantReader;
@@ -418,10 +538,6 @@
 		19EF9B9E26A6132C007A0BBA /* SortingOptions */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SortingOptions;
-		};
-		19EF9BA226A63DC0007A0BBA /* RxTestHelper */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RxTestHelper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
