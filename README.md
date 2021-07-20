@@ -65,7 +65,7 @@ The app is developed using:
 * Xcode Version 12.5.1 (12E507)
 
 ## Dependencies
-Only `RxSwift` is used in the project as a 3rd party dependency.
+Only `RxSwift` was used in the project as a 3rd party dependency.
 	
 ## Setup
-You only need to wait for a while when you open the project to install RxSwift dependency in the swift package collection.
+When you open the `xcworkspace` file in the project, XCode will automatically install the 3rd party dependencies due to swift package working principal. You don't need to make any manuel operation for the installation step. Then, when XCode finishes the installation of dependencies, you can only run the project and you're ready.
